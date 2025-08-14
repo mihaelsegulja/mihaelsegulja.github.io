@@ -1,33 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Footer from "./components/Footer"
+import Header, { type Tab } from "./components/Header"
+import Contact from "./components/ContactPopup";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import Hero from "./components/Hero";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeTab, setActiveTab] = useState<Tab>("home");
+  const [showContact, setShowContact] = useState(false);
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "projects":
+        return <Projects/>;
+      case "about":
+        return <About/>;
+      default:
+        return <Hero/>;
+    }
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React + TS</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header onNavClick={setActiveTab} onContactClick={() => setShowContact(true)} />
+      <main id="content">{renderContent()}</main>
+      <Footer />
+      {showContact && <Contact onClose={() => setShowContact(false)} />}
     </>
   )
 }
