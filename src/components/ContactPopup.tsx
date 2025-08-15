@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export default function ContactPopup({ onClose }: { onClose: () => void }) {
   const windowRef = useRef<HTMLDivElement>(null);
@@ -11,12 +11,24 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
     setOffset({ x: e.clientX - drag.x, y: e.clientY - drag.y });
   };
 
-  const onDrag = (e: React.MouseEvent) => {
-    if (!dragging) return;
-    setDrag({ x: e.clientX - offset.x, y: e.clientY - offset.y });
-  };
+  useEffect(() => {
+    const onDrag = (e: MouseEvent) => {
+      if (!dragging) return;
+      setDrag({ x: e.clientX - offset.x, y: e.clientY - offset.y });
+    };
 
-  const stopDrag = () => setDragging(false);
+    const stopDrag = () => setDragging(false);
+
+    if (dragging) {
+      window.addEventListener("mousemove", onDrag);
+      window.addEventListener("mouseup", stopDrag);
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", onDrag);
+      window.removeEventListener("mouseup", stopDrag);
+    };
+  }, [dragging, offset]);
 
   return (
     <div
@@ -31,8 +43,6 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
         color: "var(--text)",
         boxShadow: "8px 8px var(--accent-dark)"
       }}
-      onMouseMove={onDrag}
-      onMouseUp={stopDrag}
     >
       <div
         style={{
@@ -56,8 +66,8 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
       </div>
       <div style={{ padding: "1rem", textAlign: "start" }}>
         <p>Email: <a href="mailto:mihael.segulja@gmail.com">mihael.segulja@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/mihaelsegulja" target="_blank">mihaelsegulja</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/mihael-šegulja-692745377" target="_blank">mihael-šegulja</a></p>
+        <p>GitHub: <a href="https://github.com/mihaelsegulja" target="_blank" rel="noreferrer">mihaelsegulja</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/mihael-šegulja-692745377" target="_blank" rel="noreferrer">mihael-šegulja</a></p>
       </div>
     </div>
   );
