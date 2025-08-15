@@ -25,7 +25,7 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
         position: "absolute",
         top: drag.y,
         left: drag.x,
-        width: "300px",
+        width: "350px",
         border: "1px solid var(--accent)",
         backgroundColor: "var(--bg)",
         color: "var(--text)",
@@ -49,7 +49,9 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
           cursor: "pointer",
           border: "1px solid var(--accent)",
           color: "var(--accent)",
-          padding: "5px"
+          backgroundColor: "var(--bg)",
+          padding: "1px 8px",
+          fontSize: "1.1rem"
           }}>X</button>
       </div>
       <div style={{ padding: "1rem", textAlign: "start" }}>

@@ -2,8 +2,17 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
   return (
-    <div>Hero
-      <Typewriter key="home" words={["> Welcome."]} typeSpeed={50} />
-    </div>
+    <>
+      <div>
+        {"> "}
+        <Typewriter
+          key="home"
+          cursor
+          cursorStyle="█"
+          words={["./welcome.sh"]}
+          typeSpeed={50}
+        />
+      </div>
+    </>
   )
 }
