@@ -15,7 +15,7 @@ body {
   background-color: var(--bg);
 }
 
-a:hover, a:focus {
+a:hover, a:active {
   color: var(--accent);
 }
 
@@ -32,14 +32,29 @@ a:hover, a:focus {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 0.75rem;
   margin-bottom: 1rem;
+  font-weight: bold;
+  align-items: center;
+  border-bottom: 1px solid var(--accent);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 footer {
   margin-top: auto;
   padding: 1rem;
   color: var(--text-dark);
+  border-top: 1px solid;
 }
 
 a {
@@ -81,12 +96,6 @@ span[class*="blinkingCursor"] {
   }
 }
 
-@media (min-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .project-card {
   padding: 1rem;
   border: 1px solid var(--text-dark);
@@ -96,6 +105,7 @@ span[class*="blinkingCursor"] {
   border-color: var(--accent);
   box-shadow: 8px 8px var(--accent-dark);
   transform: translateY(-2px);
+  cursor: pointer;
 }
 
 .project-title {
@@ -115,12 +125,97 @@ span[class*="blinkingCursor"] {
 }
 
 .project-description {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   text-align: justify;
   color: #ccc;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .project-tech, .project-type {
   font-size: 0.85rem;
   color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000000d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 600px;
+  color: #eee;
+  position: relative;
+  box-shadow: 8px 8px var(--accent-dark);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 1px 8px;
+}
+
+.modal h2 {
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+}
+
+.modal-desc {
+  margin: 1rem 0;
+  text-align: justify;
+}
+
+.modal-tech {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.modal-link {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.modal-link:hover {
+  color: var(--accent);
+}
+
+.project-media {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.project-media img {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.project-media img:hover {
+  transform: scale(1.05);
+  border: 1px solid var(--accent);
 }

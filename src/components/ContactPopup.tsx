@@ -2,9 +2,23 @@ import React, { useEffect, useRef, useState } from 'react'
 
 export default function ContactPopup({ onClose }: { onClose: () => void }) {
   const windowRef = useRef<HTMLDivElement>(null);
-  const [drag, setDrag] = useState<{ x: number; y: number }>({ x: 100, y: 100 });
+  const [drag, setDrag] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [offset, setOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
+
+  useEffect(() => {
+    const centerPopup = () => {
+      const width = windowRef.current?.offsetWidth || 350;
+      const height = windowRef.current?.offsetHeight || 200;
+      const x = (window.innerWidth - width) / 2;
+      const y = (window.innerHeight - height) / 2;
+      setDrag({ x, y });
+    };
+
+    centerPopup();
+    window.addEventListener("resize", centerPopup);
+    return () => window.removeEventListener("resize", centerPopup);
+  }, []);
 
   const startDrag = (e: React.MouseEvent) => {
     setDragging(true);
@@ -38,24 +52,24 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
         top: drag.y,
         left: drag.x,
         width: "350px",
+        maxWidth: "90vw",
         border: "1px solid var(--accent)",
         backgroundColor: "var(--bg)",
         color: "var(--text)",
         boxShadow: "8px 8px var(--accent-dark)"
       }}
     >
-      <div
+      <div className="contact-titlebar"
         style={{
           display: "flex",
           justifyContent: "space-between",
           padding: "0.5rem",
-          backgroundColor: "black",
           cursor: "move",
           borderBottom: "1px solid var(--accent)",
         }}
         onMouseDown={startDrag}
       >
-        Contact <button onClick={onClose} style={{
+        Contact <button className="contact-btn-close" onClick={onClose} style={{
           cursor: "pointer",
           border: "1px solid var(--accent)",
           color: "var(--accent)",
@@ -64,10 +78,10 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
           fontSize: "1.1rem"
           }}>X</button>
       </div>
-      <div style={{ padding: "1rem", textAlign: "start" }}>
+      <div className="contact-content" style={{ padding: "1rem", textAlign: "start" }}>
         <p>Email: <a href="mailto:mihael.segulja@gmail.com">mihael.segulja@gmail.com</a></p>
         <p>GitHub: <a href="https://github.com/mihaelsegulja" target="_blank" rel="noreferrer">mihaelsegulja</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/mihael-šegulja-692745377" target="_blank" rel="noreferrer">mihael-šegulja</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/mihael-segulja" target="_blank" rel="noreferrer">mihael-segulja</a></p>
       </div>
     </div>
   );

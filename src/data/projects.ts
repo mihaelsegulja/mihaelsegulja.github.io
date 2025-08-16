@@ -1,9 +1,18 @@
-export const projects = [
+export interface ProjectProps {
+  name: string;
+  description: string;
+  url: string;
+  tech: string[];
+  type: string;
+  media?: string[];
+}
+
+export const projects: ProjectProps[] = [
   {
     name: "Portfolio Website",
     description: "Personal portfolio built with React + TypeScript + Vite",
     url: "https://github.com/mihaelsegulja/mihaelsegulja.github.io",
-    tech: ["React", "TypeSctipt", "Vite"],
+    tech: ["React", "TypeScript", "Vite"],
     type: "Showcase/Learning",
   },
   {
@@ -19,6 +28,9 @@ export const projects = [
     url: "https://github.com/mihaelsegulja/match3",
     tech: ["C", "raylib"],
     type: "Learning",
+    media: [
+      "/media/match3.gif",
+    ]
   },
   {
     name: "React Native Movie App",
@@ -32,7 +44,7 @@ export const projects = [
     description: "Simple 10-key Arduino-based macropad with OLED screen and rotary encoder",
     url: "https://github.com/mihaelsegulja/macrokeeb",
     tech: ["C++", "Arduino Pro Micro", "Arduino framework"],
-    type: "High school final project",
+    type: "High School Final Project",
   },
   {
     name: "OAuth Demo",
@@ -45,36 +57,36 @@ export const projects = [
     name: "Marx Weather Station",
     description: "An IoT project for monitoring air quality using an ESP32 and BME680 sensor. It collects sensor data, sends it via MQTT to a backend service, stores it in a SQL Server database, and allows data visualization for a given time period.",
     url: "https://github.com/mihaelsegulja/marx-weather-station",
-    tech: ["C#", "ASP.NET", "SQL Server", "ESP32", "HTML", "CSS", "JavaScript"],
-    type: "College project",
+    tech: ["C#", "ASP.NET", "SQL Server", "ESP32", "MQTT", "RabbitMQ", "HTML", "CSS", "JavaScript"],
+    type: "College Project",
   },
   {
     name: "DIY Project Platform",
     description: "A web platform for sharing and discovering DIY tips and tricks. Admins can create categorized entries by topic and materials, approve user submissions, and manage content. Users can browse categories, leave comments, and submit their own tips for approval.",
     url: "https://github.com/mihaelsegulja/rwa-projekt",
-    tech: ["C#", "ASP.NET", "SQL Server", "Razor", "CSS", "JavaScript"],
-    type: "College project",
+    tech: ["C#", "ASP.NET", "SQL Server", "Razor", "CSS", "JavaScript", "Bootstrap", "jQuery"],
+    type: "College Project",
   },
   {
     name: "Reddit RSS Reader",
     description: "A Java desktop application for authenticated admin users to fetch and store Reddit RSS feed data (subreddits, comment threads, etc.) into a SQL Server database. Includes functionality to view, update, and delete entries through a Swing-based GUI.",
     url: "https://github.com/mihaelsegulja/java1-projekt",
     tech: ["Java", "SQL Server", "Java Swing GUI"],
-    type: "College project",
+    type: "College Project",
   },
   {
     name: "Football World Cup Viewer",
     description: "A Windows desktop application displaying and visualizing data from the 2018 Men’s and 2019 Women’s Football World Cups. Built with both Windows Forms and WPF to demonstrate data fetching, presentation, and UI design techniques.",
     url: "https://github.com/mihaelsegulja/oop-dotnet-projekt",
     tech: ["C#", ".NET", "Windows Forms", "WPF"],
-    type: "College project",
+    type: "College Project",
   },
   {
     name: "College Website",
     description: "A responsive static site built to demonstrate advanced frontend skills, including custom layouts, interactive elements, and clean design",
     url: "https://github.com/mihaelsegulja/supit-projekt",
-    tech: ["HTML", "CSS", "JavaScript"],
-    type: "College project",
+    tech: ["HTML", "CSS", "JavaScript", "jQuery"],
+    type: "College Project",
   },
   {
     name: "SFML Demo - Dijkstra Pathfinding",
@@ -88,7 +100,7 @@ export const projects = [
     description: "An early e-commerce site prototype built during high school, featuring product listings, a shopping cart, and basic backend integration with PHP and XAMPP",
     url: "https://github.com/mihaelsegulja/webshop-project",
     tech: ["PHP", "MySQL", "XAMPP", "HTML", "CSS", "JavaScript"],
-    type: "High school project",
+    type: "High School Project",
   },
   {
     name: "SFML Demo - Flower Drawing",
@@ -98,7 +110,7 @@ export const projects = [
     type: "College Project",
   },
   {
-    name: "Demo - Game of Life",
+    name: "Game of Life",
     description: "A visual representation of Conway's Game of Life implemented in C++, featuring CLI-controlled simulation steps",
     url: "https://github.com/mihaelsegulja/spa-dz-02",
     tech: ["C++"],
