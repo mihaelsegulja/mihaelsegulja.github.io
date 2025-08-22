@@ -205,7 +205,7 @@ span[class*="blinkingCursor"] {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .project-media img {
@@ -218,4 +218,8 @@ span[class*="blinkingCursor"] {
 .project-media img:hover {
   transform: scale(1.05);
   border: 1px solid var(--accent);
+}
+
+.dud {
+  color: var(--accent);
 }

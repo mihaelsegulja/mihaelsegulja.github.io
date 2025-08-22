@@ -8,7 +8,26 @@ export default function useFancybox(options: Partial<FancyboxOptions> = {}) {
 
   useEffect(() => {
     if (root) {
-      Fancybox.bind(root, "[data-fancybox]", options);
+      Fancybox.bind(root, "[data-fancybox]", {
+          mainStyle: {
+            "--f-thumb-border-radius": "0",
+            "--f-arrow-border-radius": "0",
+            "--f-thumb-opacity": "0.5",
+            "--f-thumb-hover-opacity": "1",
+            "--f-thumb-selected-opacity": "1",
+            "--fancybox-backdrop-bg": "#30303030"
+          },
+          zoomEffect: false,
+          fadeEffect: false,
+          showClass: false,
+          hideClass: false,
+          Carousel: {
+            Thumbs: {
+              type: "classic",
+            },
+          },
+          ...options
+        });
       return () => Fancybox.unbind(root);
     }
   }, [root, options]);

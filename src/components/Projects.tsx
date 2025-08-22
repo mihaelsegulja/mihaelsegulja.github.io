@@ -5,27 +5,12 @@ import useFancybox from "../hooks/useFancybox";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<ProjectProps | null>(null);
-  const [setRoot] = useFancybox({
-    mainStyle: {
-      "--f-thumb-border-radius": "0",
-      "--f-arrow-border-radius": "0",
-      "--f-thumb-opacity": "0.5",
-      "--f-thumb-hover-opacity": "1",
-      "--f-thumb-selected-opacity": "1",
-    },
-    zoomEffect: false,
-    fadeEffect: false,
-    Carousel: {
-      Thumbs: {
-        type: "classic",
-      },
-    },
-  });
+  const [setRoot] = useFancybox();
 
   return (
     <>
       <div>
-        {"> "}
+      <b><span style={{ color: "var(--accent)"}}>{"> "}</span></b>
         <Typewriter
           key="projects"
           cursor
@@ -38,11 +23,7 @@ export default function Projects() {
         <div className="projects-grid">
           {projects.map((p, i) => (
             <div key={i} className="project-card" onClick={() => setActiveProject(p)}>
-              <h3 className="project-title">
-                <a href={p.url} target="_blank" rel="noopener noreferrer">
-                  {p.name}
-                </a>
-              </h3>
+              <h3 className="project-title">{p.name}</h3>
               <div className="project-type">{p.type}</div>
               <p className="project-description">{p.description}</p>
               <div className="project-tech">{p.tech.join(" • ")}</div>
