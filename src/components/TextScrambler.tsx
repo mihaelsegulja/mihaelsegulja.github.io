@@ -16,7 +16,7 @@ class TextScramble {
 
   constructor(el: HTMLElement) {
     this.el = el;
-    this.chars = "!$%,.<>-_\\/[]{}()~—=+*^?#________AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+    this.chars = "!$%,.<>-_\\/[]{}()~=+*^?#0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
     this.update = this.update.bind(this);
   }
 
@@ -55,7 +55,7 @@ class TextScramble {
           char = this.randomChar();
           this.queue[i].char = char;
         }
-        output += `<span class="dud">${char}</span>`;
+        output += `<span style='color: var(--accent)'>${char}</span>`;
       } else {
         output += from;
       }

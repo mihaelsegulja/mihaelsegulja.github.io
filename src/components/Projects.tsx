@@ -48,6 +48,16 @@ export default function Projects() {
             >
               View Code {"->"}
             </a>
+            {activeProject.demo && (
+              <a
+                className="modal-link"
+                href={activeProject.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Live Demo {"->"}
+              </a>
+            )}
             <div className="project-media" ref={setRoot}>
               {activeProject.media?.map((src, i) => (
                 <a

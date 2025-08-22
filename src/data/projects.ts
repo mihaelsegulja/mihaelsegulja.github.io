@@ -5,6 +5,7 @@ export interface ProjectProps {
   tech: string[];
   type: string;
   media?: string[];
+  demo?: string;
 }
 
 export const projects: ProjectProps[] = [
@@ -87,6 +88,7 @@ export const projects: ProjectProps[] = [
     url: "https://github.com/mihaelsegulja/supit-projekt",
     tech: ["HTML", "CSS", "JavaScript", "jQuery"],
     type: "College Project",
+    demo: "https://mihaelsegulja.github.io/supit-projekt",
   },
   {
     name: "SFML Demo - Dijkstra Pathfinding",

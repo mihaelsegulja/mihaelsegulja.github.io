@@ -219,7 +219,3 @@ span[class*="blinkingCursor"] {
   transform: scale(1.05);
   border: 1px solid var(--accent);
 }
-
-.dud {
-  color: var(--accent);
-}
