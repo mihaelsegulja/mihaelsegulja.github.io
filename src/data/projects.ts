@@ -1,13 +1,5 @@
-export interface ProjectProps {
-  name: string;
-  description: string;
-  url: string;
-  tech: string[];
-  type: string;
-  media?: string[];
-  demo?: string;
-}
-
+import type { ProjectProps } from "../types";
+ 
 export const projects: ProjectProps[] = [
   {
     name: "Portfolio Website",

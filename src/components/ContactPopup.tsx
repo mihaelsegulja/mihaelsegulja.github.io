@@ -51,8 +51,8 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
         position: "absolute",
         top: drag.y,
         left: drag.x,
-        width: "350px",
-        maxWidth: "90vw",
+        width: "400px",
+        maxWidth: "95vw",
         border: "1px solid var(--accent)",
         backgroundColor: "var(--bg)",
         color: "var(--text)",
@@ -63,7 +63,7 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          padding: "0.5rem",
+          padding: "0.4rem",
           cursor: "move",
           borderBottom: "1px solid var(--accent)",
         }}
@@ -78,10 +78,18 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
           fontSize: "1.1rem"
           }}>X</button>
       </div>
-      <div className="contact-content" style={{ padding: "1rem", textAlign: "start" }}>
-        <p>Email: <a href="mailto:mihael.segulja@gmail.com">mihael.segulja@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/mihaelsegulja" target="_blank" rel="noreferrer">mihaelsegulja</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/mihael-segulja" target="_blank" rel="noreferrer">mihael-segulja</a></p>
+      <div className="contact-content" style={{ padding: "0.8rem", textAlign: "start", wordBreak: "break-all" }}>
+        <div>{`{`}</div>
+        <div style={{ paddingLeft: "0.7rem" }}>
+         <span style={{color:"var(--accent)"}}>"email":</span> "<a href="mailto:mihael.segulja@gmail.com">mihael.segulja@gmail.com</a>",
+        </div>
+        <div style={{ paddingLeft: "0.7rem" }}>
+          <span style={{color:"var(--accent)"}}>"github":</span> "<a href="https://github.com/mihaelsegulja" target="_blank" rel="noreferrer">mihaelsegulja</a>",
+        </div>
+        <div style={{ paddingLeft: "0.7rem" }}>
+          <span style={{color:"var(--accent)"}}>"linkedin":</span> "<a href="https://www.linkedin.com/in/mihael-segulja" target="_blank" rel="noreferrer">in/mihael-segulja</a>"
+        </div>
+        <div>{`}`}</div>
       </div>
     </div>
   );

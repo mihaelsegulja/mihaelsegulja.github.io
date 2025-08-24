@@ -1,4 +1,4 @@
-export type Tab = "projects" | "about" | "home";
+import type { Tab } from "../types";
 
 export interface HeaderProps {
   onNavClick: (tab: Tab) => void;
@@ -8,18 +8,15 @@ export interface HeaderProps {
 export default function Header({ onNavClick, onContactClick }: HeaderProps) {
   return (
     <header>
-      <a
-        href="#"
-        onClick={() => onNavClick("home")}
-        style={{
-          whiteSpace: "nowrap",
-        }}
-      >
-        {"[ "}Mihael Šegulja{" ]"}
-      </a>
-
       <nav>
         {"[ "}
+        <a
+          href="#"
+          onClick={() => onNavClick("home")}
+        >
+          Home
+        </a>
+        {" | "}
         <a
           href="#projects"
           onClick={() => onNavClick("projects")}

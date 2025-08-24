@@ -1,7 +1,8 @@
 import { Typewriter } from "react-simple-typewriter";
-import { projects, type ProjectProps } from "../data/projects";
+import { projects } from "../data/projects";
 import { useState } from "react";
 import useFancybox from "../hooks/useFancybox";
+import type { ProjectProps } from "../types";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<ProjectProps | null>(null);

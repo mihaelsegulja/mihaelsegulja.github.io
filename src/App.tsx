@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Footer from "./components/Footer"
-import Header, { type Tab } from "./components/Header"
+import Header from "./components/Header"
 import Contact from "./components/ContactPopup";
 import Projects from "./components/Projects";
 import About from "./components/About";
 import Hero from "./components/Hero";
+import type { Tab } from "./types";
 
 function App() {
   const [activeTab, setActiveTab] = useState<Tab>("home");
@@ -16,8 +17,9 @@ function App() {
         return <Projects/>;
       case "about":
         return <About/>;
+      case "home":
       default:
-        return <Hero/>;
+        return <Hero onNavClick={setActiveTab}/>;
     }
   };
 
