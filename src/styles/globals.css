@@ -219,3 +219,36 @@ span[class*="blinkingCursor"] {
   transform: scale(1.05);
   border: 1px solid var(--accent);
 }
+
+.techstack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.techstack-item {
+  background: var(--bg);
+  border: 1px solid var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  word-break: break-word;
+}
+
+.techstack-item:hover {
+  transform: translateY(-2px);
+  border: 1px solid var(--accent);
+  box-shadow: 6px 6px var(--accent-dark);
+}
+
+.techstack-item i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.techstack-item:hover i {
+  color: var(--accent);
+}
