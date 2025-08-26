@@ -9,3 +9,8 @@ export interface ProjectProps {
   media?: string[];
   demo?: string;
 }
+
+export interface TechStackProps {
+  name: string;
+  icon?: string;
+}

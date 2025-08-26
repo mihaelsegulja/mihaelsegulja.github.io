@@ -1,4 +1,5 @@
 import { Typewriter } from 'react-simple-typewriter'
+import { techstack } from '../data/techstack'
 
 export default function About
 () {
@@ -27,120 +28,51 @@ export default function About
           <li>Experiment with microcontrollers like Arduino and ESP32, writing low-level firmware in C and C++ and tinkering with electronics</li>
           <li>Tinker with Linux systems, scripting and automation</li>
           <li>Build and troubleshoot PCs and set up small home servers</li>
+          <li>Continuously explore and learn new tools, frameworks, and technologies</li>
         </ul>
         </div>
-        <h3>Tech Stack</h3>
         <div className="techstack-container">
+          <h3>Tech Stack</h3>
           <div className="techstack-grid">
-            <div className="techstack-item">
-              <i className="devicon-dotnetcore-plain"></i>
-              <span>.NET</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-csharp-plain"></i>
-              <span>C#</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-microsoftsqlserver-plain"></i>
-              <span>SQL Server</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-c-plain"></i>
-              <span>C</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-cplusplus-plain"></i>
-              <span>C++</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-java-plain"></i>
-              <span>Java</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-javascript-plain"></i>
-              <span>JavaScript</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-typescript-plain"></i>
-              <span>TypeScript</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-react-plain"></i>
-              <span>React</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-reactnative-original"></i>
-              <span>React Native</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-bootstrap-plain"></i>
-              <span>Bootstrap</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-jquery-plain"></i>
-              <span>jQuery</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-markdown-plain"></i>
-              <span>Markdown</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-arduino-plain"></i>
-              <span>Arduino</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-postman-plain"></i>
-              <span>Postman</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-swagger-plain"></i>
-              <span>Swagger</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-rabbitmq-plain"></i>
-              <span>RabbitMQ</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-docker-plain"></i>
-              <span>Docker</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-linux-plain"></i>
-              <span>Linux</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-bash-plain"></i>
-              <span>Bash</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-git-plain"></i>
-              <span>Git</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-neovim-plain"></i>
-              <span>Neovim</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-vscode-plain"></i>
-              <span>VS Code</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-visualstudio-plain"></i>
-              <span>Visual Studio</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-rider-plain"></i>
-              <span>Rider</span>
-            </div>
-            <div className="techstack-item">
-              <i className="devicon-intellij-plain"></i>
-              <span>Intellij</span>
-            </div>
+            {techstack.map((t) => (
+              <div className="techstack-item">
+                <i className={t.icon}></i>
+                <span>{t.name}</span>
+              </div>
+            ))}
           </div>
         </div>
-        <h3>Achievements</h3>
         <div className="achievements-container">
-          achievements go here
+          <h3>Achievements</h3>
+          <h4>Certificates & Courses</h4>
+          <ul>
+            <li>Oracle Cloud Infrastructure Certified AI Foundations Associate {`[`}2025{`]`}</li>
+            <li>Microsoft Applied Skills: Administer Active Directory Domain Services {`[`}2024{`]`}</li>
+            <li>Fortinet Certified Fundamentals Cybersecurity {`[`}2024{`]`}</li>
+            <li>Oracle Academy {`[`}2023{`]`}
+              <ul>
+                <li>Java Foundations</li>
+                <li>Java Programming</li>
+                <li>AiML Artificial Intelligence with Machine Learning in Java</li>
+              </ul>
+            </li>
+            <li>Cisco Networking Academy {`[`}2023{`]`}
+              <ul>
+                <li>CCNA: Introduction to Networks</li>
+                <li>CCNA: Switching, Routing, and Wireless Essentials</li>
+                <li>CCNA: Enterprise Networking, Security, and Automation</li>
+              </ul>
+            </li>
+            <li>IQRF Basics {`[`}2022{`]`}</li>
+          </ul>
+          <h4>Other</h4>
+          <ul>
+            <li>WorldSkills Croatia 2023: 2nd place {`(`}silver{`)`} in IT System Administration discipline</li>
+            <li>Inova-Mladi 2023: Bronze medal for macro keyboard</li>
+            <li>Innovation Fair Ivanić-Grad 2023: Silver medal for macro keyboard</li>
+            <li>Participated in Algebra Security Day Contest 2022</li>
+            <li>Participated in Hacknite 2.0 2021</li>
+          </ul>
         </div>
       </div>
     </>
