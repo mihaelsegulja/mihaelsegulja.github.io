@@ -50,6 +50,10 @@ export const techstack: TechStackProps[] = [
     icon: "nf nf-dev-react",
   },
   {
+    name: "Vite",
+    icon: "nf nf-dev-vitejs"
+  },
+  {
     name: "Bootstrap",
     icon: "nf nf-dev-bootstrap",
   },
@@ -60,6 +64,10 @@ export const techstack: TechStackProps[] = [
   {
     name: "Markdown",
     icon: "nf nf-dev-markdown",
+  },
+  {
+    name: "raylib",
+    icon: "nf nf-md-gamepad_square",
   },
   {
     name: "Arduino",

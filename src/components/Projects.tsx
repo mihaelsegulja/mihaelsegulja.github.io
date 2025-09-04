@@ -20,6 +20,9 @@ export default function Projects() {
           typeSpeed={50}
         />
       </div>
+      <div className="projects-note">
+        <i><sup>*</sup>Click on a project to view all details about it</i>
+      </div>
       <div className="projects-container">
         <div className="projects-grid">
           {projects.map((p, i) => (
@@ -60,16 +63,26 @@ export default function Projects() {
               </a>
             )}
             <div className="project-media" ref={setRoot}>
-              {activeProject.media?.map((src, i) => (
-                <a
-                  key={i}
-                  href={src}
-                  data-fancybox={`gallery-${activeProject.name}`}
-                  data-caption={`${activeProject.name} #${i + 1}`}
-                >
-                  <img src={src} alt={`${activeProject.name} #${i + 1}`} />
-                </a>
-              ))}
+              {activeProject.media?.map((src, i) => {
+                const isVideo = src.endsWith(".mp4") || src.endsWith(".webm");
+
+                return (
+                  <a
+                    key={i}
+                    href={src}
+                    data-fancybox={`gallery-${activeProject.name}`}
+                    data-caption={`${activeProject.name} #${i + 1}`}
+                  >
+                    {isVideo ? (
+                      <video
+                        src={src}
+                      />
+                    ) : (
+                      <img src={src} alt={`${activeProject.name} #${i + 1}`} />
+                    )}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

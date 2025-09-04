@@ -22,8 +22,9 @@ export const projects: ProjectProps[] = [
     tech: ["C", "raylib"],
     type: "Learning",
     media: [
-      "/media/match3.gif",
-    ]
+      "/media/match3/match3.mp4",
+      "/media/match3/match3.gif",
+    ],
   },
   {
     name: "React Native Movie App",
@@ -38,6 +39,11 @@ export const projects: ProjectProps[] = [
     url: "https://github.com/mihaelsegulja/macrokeeb",
     tech: ["C++", "Arduino Pro Micro", "Arduino framework"],
     type: "High School Final Project",
+    media: [
+      "/media/macrokeeb/macrokeeb1.jpg",
+      "/media/macrokeeb/macrokeeb2.jpg",
+      "/media/macrokeeb/macrokeeb3.jpg",
+    ],
   },
   {
     name: "OAuth Demo",
@@ -52,6 +58,12 @@ export const projects: ProjectProps[] = [
     url: "https://github.com/mihaelsegulja/marx-weather-station",
     tech: ["C#", "ASP.NET", "SQL Server", "ESP32", "MQTT", "RabbitMQ", "HTML", "CSS", "JavaScript"],
     type: "College Project",
+    media: [
+      "/media/marx/marx3.mp4",
+      "/media/marx/marx0.png",
+      "/media/marx/marx1.png",
+      "/media/marx/marx2.jpg",
+    ],
   },
   {
     name: "DIY Project Platform",
@@ -90,13 +102,6 @@ export const projects: ProjectProps[] = [
     type: "College Project",
   },
   {
-    name: "Webshop",
-    description: "An early e-commerce site prototype built during high school, featuring product listings, a shopping cart, and basic backend integration with PHP and XAMPP",
-    url: "https://github.com/mihaelsegulja/webshop-project",
-    tech: ["PHP", "MySQL", "XAMPP", "HTML", "CSS", "JavaScript"],
-    type: "High School Project",
-  },
-  {
     name: "SFML Demo - Flower Drawing",
     description: "A simple C++ program using SFML to render a stylized flower, exploring basic graphics rendering and shape manipulation",
     url: "https://github.com/mihaelsegulja/rvs19-spa-dz-01",
@@ -109,5 +114,12 @@ export const projects: ProjectProps[] = [
     url: "https://github.com/mihaelsegulja/spa-dz-02",
     tech: ["C++"],
     type: "College Project",
+  },
+  {
+    name: "Webshop",
+    description: "An early e-commerce site prototype built during high school, featuring product listings, a shopping cart, and basic backend integration with PHP and XAMPP",
+    url: "https://github.com/mihaelsegulja/webshop-project",
+    tech: ["PHP", "MySQL", "XAMPP", "HTML", "CSS", "JavaScript"],
+    type: "High School Project",
   },
 ];

@@ -68,7 +68,7 @@ export default function About
           <h4>Other</h4>
           <ul>
             <li>WorldSkills Croatia 2023: 2nd place {`(`}silver{`)`} in IT System Administration discipline</li>
-            <li>Inova-Mladi 2023: Bronze medal for macro keyboard</li>
+            <li>Inova Mladi 2023: Bronze medal for macro keyboard</li>
             <li>Innovation Fair Ivanić-Grad 2023: Silver medal for macro keyboard</li>
             <li>Participated in Algebra Security Day Contest 2022</li>
             <li>Participated in Hacknite 2.0 2021</li>

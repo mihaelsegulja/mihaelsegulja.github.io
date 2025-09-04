@@ -210,14 +210,16 @@ span[class*="blinkingCursor"] {
   margin-top: 2rem;
 }
 
-.project-media img {
+.project-media img,
+.project-media video {
   width: 150px;
   height: auto;
   cursor: pointer;
   border: 1px solid transparent;
 }
 
-.project-media img:hover {
+.project-media img:hover,
+.project-media video:hover {
   transform: scale(1.05);
   border: 1px solid var(--accent);
 }
@@ -257,4 +259,26 @@ span[class*="blinkingCursor"] {
 
 ul li {
   line-height: 1.5rem;
+}
+
+.projects-note {
+  margin: 0.3rem 0;
+}
+
+.hero-contact {
+  margin-top: 3rem;
+}
+
+.hero-contact a {
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+.hero-contact i {
+  font-size: 2rem;
+  padding: 0.2rem;
+}
+
+.hero-contact i:hover {
+  color: var(--accent);
 }

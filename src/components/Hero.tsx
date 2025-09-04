@@ -48,6 +48,11 @@ export default function Hero({ onNavClick }: HeroProps) {
         <h4>
           Take a look at projects I made <a href="#projects" onClick={() => onNavClick("projects")}> here {"->"}</a>
         </h4>
+        <div className="hero-contact">
+          <a href="https://github.com/mihaelsegulja"><i className="nf nf-dev-github"></i></a>
+          <a href="mailto:mihael.segulja@gmail.com"><i className="nf nf-oct-mail"></i></a>
+          <a href="https://www.linkedin.com/in/mihael-segulja"><i className="nf nf-dev-linkedin"></i></a>
+        </div>
       </div>
     </>
   )
