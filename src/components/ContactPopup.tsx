@@ -87,7 +87,7 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
           <span style={{color:"var(--accent)"}}>"github":</span> "<a href="https://github.com/mihaelsegulja" target="_blank" rel="noreferrer">mihaelsegulja</a>",
         </div>
         <div style={{ paddingLeft: "0.7rem" }}>
-          <span style={{color:"var(--accent)"}}>"linkedin":</span> "<a href="https://www.linkedin.com/in/mihael-segulja" target="_blank" rel="noreferrer">in/mihael-segulja</a>"
+          <span style={{color:"var(--accent)"}}>"linkedin":</span> "<a href="https://linkedin.com/in/mihael-segulja" target="_blank" rel="noreferrer">in/mihael-segulja</a>"
         </div>
         <div>{`}`}</div>
       </div>

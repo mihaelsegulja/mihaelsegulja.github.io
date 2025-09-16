@@ -9,13 +9,6 @@ export const projects: ProjectProps[] = [
     type: "Showcase/Learning",
   },
   {
-    name: "Desk Clock",
-    description: "An ESP32-based desk clock [Work in Progress]",
-    url: "https://github.com/mihaelsegulja/desk-clock",
-    tech: ["C++", "ESP32", "Arduino framework"],
-    type: "Hobby",
-  },
-  {
     name: "Match 3",
     description: "A simple 2D match-3 game written in C and raylib",
     url: "https://github.com/mihaelsegulja/match3",
@@ -102,17 +95,17 @@ export const projects: ProjectProps[] = [
     type: "College Project",
   },
   {
-    name: "SFML Demo - Flower Drawing",
-    description: "A simple C++ program using SFML to render a stylized flower, exploring basic graphics rendering and shape manipulation",
-    url: "https://github.com/mihaelsegulja/rvs19-spa-dz-01",
-    tech: ["C++", "SFML"],
-    type: "College Project",
-  },
-  {
     name: "Game of Life",
     description: "A visual representation of Conway's Game of Life implemented in C++, featuring CLI-controlled simulation steps",
     url: "https://github.com/mihaelsegulja/spa-dz-02",
     tech: ["C++"],
+    type: "College Project",
+  },
+  {
+    name: "SFML Demo - Flower Drawing",
+    description: "A simple C++ program using SFML to render a stylized flower, exploring basic graphics rendering and shape manipulation",
+    url: "https://github.com/mihaelsegulja/rvs19-spa-dz-01",
+    tech: ["C++", "SFML"],
     type: "College Project",
   },
   {

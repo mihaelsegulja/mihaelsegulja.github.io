@@ -65,6 +65,16 @@ export default function About
             </li>
             <li>IQRF Basics {`[`}2022{`]`}</li>
           </ul>
+          <p>
+            View full certification profile on:{" "}
+            <a href="https://www.credly.com/users/mihael-segulja" target="_blank" rel="noopener noreferrer">
+              Credly
+            </a> 
+            {" | "}
+            <a href="https://learn.microsoft.com/en-us/users/mihaelsegulja0000/" target="_blank" rel="noopener noreferrer">
+              Microsoft Learn
+            </a>
+          </p>
           <h4>Other</h4>
           <ul>
             <li>WorldSkills Croatia 2023: 2nd place {`(`}silver{`)`} in IT System Administration discipline</li>

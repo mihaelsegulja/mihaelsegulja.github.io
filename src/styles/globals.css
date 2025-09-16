@@ -55,8 +55,15 @@ nav {
 footer {
   margin-top: auto;
   padding: 1rem;
-  color: var(--text-dark);
   border-top: 1px solid;
+}
+
+footer * {
+  color: var(--text-dark);
+}
+
+.footer-links {
+  margin-bottom: 1rem;
 }
 
 a {
