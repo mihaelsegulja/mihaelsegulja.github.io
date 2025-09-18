@@ -29,8 +29,8 @@ class TextScramble {
     for (let i = 0; i < length; i++) {
       const from = oldText[i] || "";
       const to = newText[i] || "";
-      const start = Math.floor(Math.random() * 10);
-      const end = start + Math.floor(Math.random() * 30);
+      const start = Math.floor(Math.random() * 20);
+      const end = start + Math.floor(Math.random() * 60);
       this.queue.push({ from, to, start, end });
     }
 
@@ -74,25 +74,43 @@ class TextScramble {
   private randomChar() {
     return this.chars[Math.floor(Math.random() * this.chars.length)];
   }
+
+  stop() {
+    if (this.frameRequest) {
+      cancelAnimationFrame(this.frameRequest);
+      this.frameRequest = null;
+    }
+  }
 }
 
 export const TextScrambler: React.FC<{ phrases: string[] }> = ({ phrases }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const fxRef = useRef<TextScramble | null>(null);
+  const timeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!ref.current) return;
 
-    const fx = new TextScramble(ref.current);
+    if (!fxRef.current) {
+      fxRef.current = new TextScramble(ref.current);
+    }
     let counter = 0;
 
     const next = () => {
-      fx.setText(phrases[counter]).then(() => {
-        setTimeout(next, 4000);
+      fxRef.current?.setText(phrases[counter]).then(() => {
+        timeoutRef.current = window.setTimeout(next, 4000);
       });
       counter = (counter + 1) % phrases.length;
     };
 
     next();
+
+    return () => {
+      fxRef.current?.stop();
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, [phrases]);
 
   return <div ref={ref} className="text text-accent" />;

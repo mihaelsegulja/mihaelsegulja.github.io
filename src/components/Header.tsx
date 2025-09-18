@@ -1,4 +1,5 @@
 import type { Tab } from "../types";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 export interface HeaderProps {
   onNavClick: (tab: Tab) => void;
@@ -37,6 +38,9 @@ export default function Header({ onNavClick, onContactClick }: HeaderProps) {
         >
           Contact
         </a>
+        {" | "}
+        Theme: 
+        <ThemeSwitcher/>
         {" ]"}
       </nav>
     </header>

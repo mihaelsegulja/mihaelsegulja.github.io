@@ -15,7 +15,11 @@ export default function useFancybox(options: Partial<FancyboxOptions> = {}) {
             "--f-thumb-opacity": "0.5",
             "--f-thumb-hover-opacity": "1",
             "--f-thumb-selected-opacity": "1",
-            "--fancybox-backdrop-bg": "#3030303f"
+            "--fancybox-backdrop-bg": "#3030303f",
+            "--f-arrow-bg": "var(--bg)",
+            "--f-arrow-color": "var(--text)",
+            "--f-button-bg": "var(--bg)",
+            "--f-button-color": "var(--text)",
           },
           zoomEffect: false,
           fadeEffect: false,

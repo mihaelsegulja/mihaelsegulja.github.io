@@ -1,12 +1,20 @@
 import { Typewriter } from "react-simple-typewriter";
 import { TextScrambler } from "./TextScrambler";
 import type { Tab } from "../types";
+import { useRef } from "react";
 
 type HeroProps = {
   onNavClick: (tab: Tab) => void;
 };
 
+const phrases = [
+  "~ Hello, I'm Mihael - software developer & hobbyist tinkerer. ~",
+  "~ I build, break, and learn by doing - coding my way through ideas. ~",
+  "~ Explorer of code. Learning by doing. ~",
+];
+
 export default function Hero({ onNavClick }: HeroProps) {
+  const scramblerRef = useRef(<TextScrambler phrases={phrases} />);
   return (
     <>
       <div>
@@ -34,13 +42,7 @@ export default function Hero({ onNavClick }: HeroProps) {
 `}                                                                         
         </pre>
         <h3 style={{ padding: "2rem 0" }}>
-        <TextScrambler
-          phrases={[
-            "~ Hello, I'm Mihael - software developer & hobbyist tinkerer. ~",
-            "~ I build, break, and learn by doing - coding my way through ideas. ~",
-            "~ Explorer of code. Learning by doing. ~",
-          ]}
-        />
+          {scramblerRef.current}
         </h3>
         <h4>
           Read more about me, my skills and achievements <a href="#about" onClick={() => onNavClick("about")}>here {"->"}</a>
