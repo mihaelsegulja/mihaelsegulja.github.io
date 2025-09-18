@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const themes = [
-  { id: "default", name: "Hacker" },
+  { id: "hacker", name: "Hacker" },
   { id: "gruvbox-dark", name: "Gruvbox Dark" },
   { id: "gruvbox-light", name: "Gruvbox Light" },
   { id: "tokyo-night", name: "Tokyo Night" },
@@ -11,7 +11,7 @@ const themes = [
 
 export default function ThemeSwitcher() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "gruvbox-dark";
+    return localStorage.getItem("theme") || "hacker";
   });
 
   useEffect(() => {
