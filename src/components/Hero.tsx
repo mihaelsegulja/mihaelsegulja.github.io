@@ -29,7 +29,7 @@ export default function Hero({ onNavClick }: HeroProps) {
       </div>
 
       <div className="hero-container">
-        <pre style={{fontSize: "0.6rem"}}>
+        <pre className="hero-ascii-art" style={{fontSize: "0.6rem"}}>
 {`
 ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗   ███████╗██╗  ██╗
 ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝   ██╔════╝██║  ██║
@@ -39,7 +39,7 @@ export default function Hero({ onNavClick }: HeroProps) {
  ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝╚══════╝╚═╝  ╚═╝
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-`}                                                                         
+`}
         </pre>
         <h3 style={{ padding: "2rem 0" }}>
           {scramblerRef.current}

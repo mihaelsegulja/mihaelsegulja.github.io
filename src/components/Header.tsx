@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Tab } from "../types";
 import ThemeSwitcher from "./ThemeSwitcher";
 
@@ -6,42 +7,32 @@ export interface HeaderProps {
   onContactClick: () => void;
 }
 
-export default function Header({ onNavClick, onContactClick }: HeaderProps) {
+export default function Header({ onNavClick, onContactClick }: HeaderProps) {  
+  const [open, setOpen] = useState(false);
   return (
     <header>
-      <nav>
-        {"[ "}
-        <a
-          href="#"
-          onClick={() => onNavClick("home")}
+        <button
+          className="hamburger"
+          onClick={() => setOpen((prev) => !prev)}
         >
+          {">>"}
+        </button>
+      <nav className={open ? "open" : ""}>
+        <a href="#" onClick={() => onNavClick("home")}>
           Home
         </a>
-        {" | "}
-        <a
-          href="#projects"
-          onClick={() => onNavClick("projects")}
-        >
+        <a href="#projects" onClick={() => onNavClick("projects")}>
           Projects
         </a>
-        {" | "}
-        <a
-          href="#about"
-          onClick={() => onNavClick("about")}
-        >
+        <a href="#about" onClick={() => onNavClick("about")}>
           About
         </a>
-        {" | "}
-        <a
-          href="#"
-          onClick={onContactClick}
-        >
+        <a href="#" onClick={onContactClick}>
           Contact
         </a>
-        {" | "}
-        Theme: 
-        <ThemeSwitcher/>
-        {" ]"}
+        <span>
+          Theme: <ThemeSwitcher/>
+        </span>
       </nav>
     </header>
   );

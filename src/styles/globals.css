@@ -48,9 +48,48 @@
   --text-dark: #414868;
 }
 
+.theme-one-dark {
+  --bg: #282c34;
+  --text: #abb2bf;
+  --accent: #61afef;
+  --accent-dark: #3e6aa0;
+  --text-dark: #5c6370;
+}
+
+.theme-solarized-light {
+  --bg: #fdf6e3;
+  --text: #657b83;
+  --accent: #b58900;
+  --accent-dark: #7b6000;
+  --text-dark: #586e75;
+}
+
+.theme-solarized-dark {
+  --bg: #002b36;
+  --text: #839496;
+  --accent: #268bd2;
+  --accent-dark: #00629d;
+  --text-dark: #586e75;
+}
+
+.theme-monokai {
+  --bg: #272822;
+  --text: #f8f8f2;
+  --accent: #f92672;
+  --accent-dark: #ae005f;
+  --text-dark: #75715e;
+}
+
 * {
   color: var(--text);
   font-family: "Fira Code Variable", monospace;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -69,27 +108,66 @@ a:hover, a:active {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   padding: 1rem 0.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
-  align-items: center;
   border-bottom: 1px solid var(--accent);
-  flex-wrap: wrap;
-  gap: 0.5rem;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  text-align: left;
 }
 
 nav {
   display: flex;
-  flex-wrap: wrap;
   gap: 0.75rem;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+}
+
+nav a::before,
+nav a::after {
+  content: "[";
+}
+
+nav a::after {
+  content: "]";
+}
+
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav * {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
 }
 
 footer {
@@ -126,10 +204,6 @@ span[class*="blinkingCursor"] {
 #content {
   text-align: start;
   margin-bottom: 3rem;
-}
-
-.projects-container {
-  padding: 1rem;
 }
 
 .projects-grid {
@@ -328,4 +402,13 @@ ul li {
 
 .hero-contact i:hover {
   color: var(--accent);
+}
+
+.hero-ascii-art {
+  transform-origin: top left;
+}
+@media (max-width: 600px) {
+  .hero-ascii-art {
+    transform: scale(0.75);
+  }
 }

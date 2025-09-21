@@ -88,7 +88,7 @@ export const projects: ProjectProps[] = [
     demo: "https://mihaelsegulja.github.io/supit-projekt",
   },
   {
-    name: "SFML Demo - Dijkstra Pathfinding",
+    name: "Dijkstra Pathfinding",
     description: "An interactive visualization of Dijkstra's algorithm using C++ and SFML, showing step-by-step shortest path calculation",
     url: "https://github.com/mihaelsegulja/spa-dz-03",
     tech: ["C++", "SFML"],
@@ -102,7 +102,7 @@ export const projects: ProjectProps[] = [
     type: "College Project",
   },
   {
-    name: "SFML Demo - Flower Drawing",
+    name: "Flower Drawing",
     description: "A simple C++ program using SFML to render a stylized flower, exploring basic graphics rendering and shape manipulation",
     url: "https://github.com/mihaelsegulja/rvs19-spa-dz-01",
     tech: ["C++", "SFML"],

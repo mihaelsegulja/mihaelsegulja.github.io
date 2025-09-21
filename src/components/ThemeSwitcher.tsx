@@ -7,6 +7,10 @@ const themes = [
   { id: "tokyo-night", name: "Tokyo Night" },
   { id: "nord-dark", name: "Nord Dark" },
   { id: "dracula", name: "Dracula" },
+  { id: "one-dark", name: "One Dark" },
+  { id: "solarized-light", name: "Solarized Light" },
+  { id: "solarized-dark", name: "Solarized Dark" },
+  { id: "monokai", name: "Monokai" },
 ];
 
 export default function ThemeSwitcher() {
