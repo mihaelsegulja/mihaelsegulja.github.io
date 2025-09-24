@@ -15,7 +15,7 @@ export default function useFancybox(options: Partial<FancyboxOptions> = {}) {
             "--f-thumb-opacity": "0.5",
             "--f-thumb-hover-opacity": "1",
             "--f-thumb-selected-opacity": "1",
-            "--fancybox-backdrop-bg": "#1f1f1f70",
+            "--fancybox-backdrop-bg": "#1b1b1b8f",
             "--f-arrow-bg": "var(--bg)",
             "--f-arrow-color": "var(--text)",
             "--f-button-bg": "var(--bg)",

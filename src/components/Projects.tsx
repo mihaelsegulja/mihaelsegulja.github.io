@@ -1,8 +1,8 @@
-import { Typewriter } from "react-simple-typewriter";
 import { projects } from "../data/projects";
 import { useState } from "react";
 import useFancybox from "../hooks/useFancybox";
 import type { ProjectProps } from "../types";
+import TypewriterEffect from "./TypewriterEffect";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<ProjectProps | null>(null);
@@ -10,16 +10,7 @@ export default function Projects() {
 
   return (
     <>
-      <div>
-      <b><span style={{ color: "var(--accent)"}}>{"> "}</span></b>
-        <Typewriter
-          key="projects"
-          cursor
-          cursorStyle="█"
-          words={["ls Projects"]}
-          typeSpeed={50}
-        />
-      </div>
+      <TypewriterEffect uniqueKey="projects" words={["ls projects"]}/>
       <div className="projects-note">
         <i><sup>*</sup>Click on a project to view all details about it</i>
       </div>
@@ -71,7 +62,6 @@ export default function Projects() {
                     key={i}
                     href={src}
                     data-fancybox={`gallery-${activeProject.name}`}
-                    data-caption={`${activeProject.name} #${i + 1}`}
                   >
                     {isVideo ? (
                       <video

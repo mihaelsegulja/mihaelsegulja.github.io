@@ -1,20 +1,10 @@
-import { Typewriter } from 'react-simple-typewriter'
 import { techstack } from '../data/techstack'
+import TypewriterEffect from './TypewriterEffect'
 
-export default function About
-() {
+export default function About() {
   return (
     <>
-      <div>
-        <b><span style={{ color: "var(--accent)"}}>{"> "}</span></b>
-        <Typewriter
-          key="about"
-          cursor
-          cursorStyle="█"
-          words={["whoami"]}
-          typeSpeed={50}
-          />
-      </div>
+      <TypewriterEffect uniqueKey="about" words={["whoami"]}/>
       <div className="about-container">
         <h2>About Me</h2>
         <div className="about-text">

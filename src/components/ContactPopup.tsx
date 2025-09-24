@@ -1,15 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react'
 
+const defaultWidth = 350;
+const defaultHeight = 200;
+
+const getInitialCenter = () => {
+  const x = (window.innerWidth - defaultWidth) / 2;
+  const y = (window.innerHeight - defaultHeight) / 2;
+  return { x, y };
+};
+
 export default function ContactPopup({ onClose }: { onClose: () => void }) {
   const windowRef = useRef<HTMLDivElement>(null);
-  const [drag, setDrag] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [drag, setDrag] = useState<{ x: number; y: number }>(getInitialCenter());
   const [offset, setOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
 
   useEffect(() => {
     const centerPopup = () => {
-      const width = windowRef.current?.offsetWidth || 350;
-      const height = windowRef.current?.offsetHeight || 200;
+      const width = windowRef.current?.offsetWidth || defaultWidth;
+      const height = windowRef.current?.offsetHeight || defaultHeight;
       const x = (window.innerWidth - width) / 2;
       const y = (window.innerHeight - height) / 2;
       setDrag({ x, y });

@@ -1,7 +1,7 @@
-import { Typewriter } from "react-simple-typewriter";
 import { TextScrambler } from "./TextScrambler";
 import type { Tab } from "../types";
 import { useRef } from "react";
+import TypewriterEffect from "./TypewriterEffect";
 
 type HeroProps = {
   onNavClick: (tab: Tab) => void;
@@ -17,17 +17,7 @@ export default function Hero({ onNavClick }: HeroProps) {
   const scramblerRef = useRef(<TextScrambler phrases={phrases} />);
   return (
     <>
-      <div>
-        <b><span style={{ color: "var(--accent)"}}>{"> "}</span></b>
-        <Typewriter
-          key="home"
-          cursor
-          cursorStyle="█"
-          words={["./welcome.sh"]}
-          typeSpeed={50}
-        />
-      </div>
-
+      <TypewriterEffect uniqueKey="home" words={["./welcome.sh"]}/>
       <div className="hero-container">
         <pre className="hero-ascii-art" style={{fontSize: "0.6rem"}}>
 {`
