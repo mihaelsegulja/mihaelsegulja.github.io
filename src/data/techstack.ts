@@ -3,7 +3,7 @@ import type { TechStackProps } from "../types";
 export const techstack: TechStackProps[] = [
   {
     name: ".NET",
-    icon: "nf nf-dev-dotnetcore",
+    icon: "nf nf-dev-dotnet",
   },
   {
     name: "C#",

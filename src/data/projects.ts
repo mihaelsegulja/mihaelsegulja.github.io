@@ -39,6 +39,13 @@ export const projects: ProjectProps[] = [
     ],
   },
   {
+    name: "dotfiles",
+    description: "My personal Linux configuration files and scripts",
+    url: "https://github.com/mihaelsegulja/dotfiles",
+    tech: ["Linux", "Bash", "Zsh", "Neovim"],
+    type: "Workflow/Setup",
+  },
+  {
     name: "OAuth Demo",
     description: "A demo project for Google OAuth login using an ASP.NET 8 backend and an Expo React Native frontend",
     url: "https://github.com/mihaelsegulja/oauth-demo",

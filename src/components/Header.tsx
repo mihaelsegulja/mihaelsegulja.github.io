@@ -1,13 +1,12 @@
 import { useState } from "react";
-import type { Tab } from "../types";
+import { Link } from "react-router-dom";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 export interface HeaderProps {
-  onNavClick: (tab: Tab) => void;
   onContactClick: () => void;
 }
 
-export default function Header({ onNavClick, onContactClick }: HeaderProps) {  
+export default function Header({ onContactClick }: HeaderProps) {  
   const [open, setOpen] = useState(false);
   return (
     <header>
@@ -18,18 +17,18 @@ export default function Header({ onNavClick, onContactClick }: HeaderProps) {
           {">>"}
         </button>
       <nav className={open ? "open" : ""}>
-        <a href="#" onClick={() => onNavClick("home")}>
+        <Link to="/" onClick={() => setOpen(false)}>
           Home
-        </a>
-        <a href="#projects" onClick={() => onNavClick("projects")}>
+        </Link>
+        <Link to="/projects" onClick={() => setOpen(false)}>
           Projects
-        </a>
-        <a href="#about" onClick={() => onNavClick("about")}>
+        </Link>
+        <Link to="/about" onClick={() => setOpen(false)}>
           About
-        </a>
-        <a href="#" onClick={onContactClick}>
+        </Link>
+        <Link to="#" onClick={() => { onContactClick(); setOpen(false); }}>
           Contact
-        </a>
+        </Link>
         <span>
           Theme: <ThemeSwitcher/>
         </span>

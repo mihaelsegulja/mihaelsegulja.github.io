@@ -1,11 +1,7 @@
 import { TextScrambler } from "./TextScrambler";
-import type { Tab } from "../types";
 import { useRef } from "react";
 import TypewriterEffect from "./TypewriterEffect";
-
-type HeroProps = {
-  onNavClick: (tab: Tab) => void;
-};
+import { Link } from "react-router-dom";
 
 const phrases = [
   "~ Hello, I'm Mihael - software developer & hobbyist tinkerer. ~",
@@ -13,7 +9,7 @@ const phrases = [
   "~ Explorer of code. Learning by doing. ~",
 ];
 
-export default function Hero({ onNavClick }: HeroProps) {
+export default function Hero() {
   const scramblerRef = useRef(<TextScrambler phrases={phrases} />);
   return (
     <>
@@ -35,15 +31,17 @@ export default function Hero({ onNavClick }: HeroProps) {
           {scramblerRef.current}
         </h3>
         <h4>
-          Read more about me, my skills and achievements <a href="#about" onClick={() => onNavClick("about")}>here {"->"}</a>
+          Read more about me, my skills and achievements{" "}
+          <Link to="/about">here {"->"}</Link>
         </h4>
         <h4>
-          Take a look at projects I made <a href="#projects" onClick={() => onNavClick("projects")}> here {"->"}</a>
+          Take a look at projects I made{" "}
+          <Link to="/projects">here {"->"}</Link>
         </h4>
         <div className="hero-contact">
           <a href="https://github.com/mihaelsegulja" target="_blank" rel="noreferrer"><i className="nf nf-dev-github"></i></a>
-          <a href="mailto:mihael.segulja@gmail.com"><i className="nf nf-oct-mail"></i></a>
           <a href="https://linkedin.com/in/mihael-segulja" target="_blank" rel="noreferrer"><i className="nf nf-dev-linkedin"></i></a>
+          <a href="mailto:mihael.segulja@gmail.com"><i className="nf nf-oct-mail"></i></a>
         </div>
       </div>
     </>
