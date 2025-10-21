@@ -32,11 +32,11 @@ export default function Hero() {
         </h3>
         <h4>
           Read more about me, my skills and achievements{" "}
-          <Link to="/about">here {"->"}</Link>
+          <Link to="/about" style={{textDecoration: "underline"}}>here {"->"}</Link>
         </h4>
         <h4>
           Take a look at projects I made{" "}
-          <Link to="/projects">here {"->"}</Link>
+          <Link to="/projects" style={{textDecoration: "underline"}}>here {"->"}</Link>
         </h4>
         <div className="hero-contact">
           <a href="https://github.com/mihaelsegulja" target="_blank" rel="noreferrer"><i className="nf nf-dev-github"></i></a>
