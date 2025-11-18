@@ -42,6 +42,10 @@ export const techstack: TechStackProps[] = [
     icon: "nf nf-dev-typescript",
   },
   {
+    name: "Angular",
+    icon: "nf nf-dev-angular",
+  },
+  {
     name: "React",
     icon: "nf nf-dev-react",
   },
@@ -68,6 +72,10 @@ export const techstack: TechStackProps[] = [
   {
     name: "raylib",
     icon: "nf nf-md-gamepad_square",
+  },
+  {
+    name: "Godot",
+    icon: "nf nf-dev-godot",
   },
   {
     name: "Arduino",

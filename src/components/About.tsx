@@ -23,6 +23,9 @@ export default function About() {
         </div>
         <div className="techstack-container">
           <h3>Tech Stack</h3>
+          <p>
+            Tools and the technologies I've built with over the years.
+          </p>
           <div className="techstack-grid">
             {techstack.map((t) => (
               <div className="techstack-item">
