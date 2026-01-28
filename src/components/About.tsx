@@ -8,13 +8,13 @@ export default function About() {
       <div className="about-container">
         <h2>About Me</h2>
         <div className="about-text">
-          Hi, I'm Mihael, a software developer, hobbyist tinkerer and tech enthusiast who loves learning by doing.
+          Hi, I'm Mihael, a full-stack software developer, hobbyist tinkerer and tech enthusiast who loves learning by doing.
         </div>
         <h3>What I Do</h3>
         <div className="whatido-container">
         <ul>
           <li>Develop applications and APIs with .NET / C#</li>
-          <li>Build responsive web apps with TypeScript, React, and modern web tech</li>
+          <li>Build responsive web apps with Angular and React</li>
           <li>Experiment with microcontrollers like Arduino and ESP32, writing low-level firmware in C and C++ and tinkering with electronics</li>
           <li>Tinker with Linux systems, scripting and automation</li>
           <li>Build and troubleshoot PCs and set up small home servers</li>
