@@ -46,7 +46,8 @@ class TextScramble {
     let complete = 0;
 
     for (let i = 0; i < this.queue.length; i++) {
-      let { from, to, start, end, char } = this.queue[i];
+      const { from, to, start, end } = this.queue[i];
+      let char = this.queue[i].char;
       if (this.frame >= end) {
         complete++;
         output += to;
