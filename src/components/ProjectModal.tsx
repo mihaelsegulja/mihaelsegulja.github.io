@@ -54,7 +54,7 @@ export default function ProjectModal() {
               <a
                 key={i}
                 href={src}
-                data-fancybox={`gallery-${project.name}`}
+                data-fancybox={`gallery-${projectSlug}`}
               >
                 {isVideo ? (
                   <video src={src} muted />

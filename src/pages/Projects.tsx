@@ -12,7 +12,7 @@ export default function Projects() {
           {projects.map((p) => (
             <Link 
               key={p.name} 
-              to={`/projects/${slugify(p.name)}`} 
+              to={`${slugify(p.name)}`} 
               className="project-card"
             >
               <h3 className="project-title">{p.name}</h3>

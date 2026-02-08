@@ -25,6 +25,7 @@ export default function useFancybox(options: Partial<FancyboxOptions> = {}) {
           fadeEffect: false,
           showClass: false,
           hideClass: false,
+          Hash: false,
           Carousel: {
             Thumbs: {
               type: "classic",
