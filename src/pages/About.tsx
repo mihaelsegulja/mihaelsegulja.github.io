@@ -1,5 +1,5 @@
 import { techstack } from '../data/techstack'
-import TypewriterEffect from './TypewriterEffect'
+import TypewriterEffect from '../components/TypewriterEffect'
 
 export default function About() {
   return (

@@ -1,6 +1,6 @@
-import { TextScrambler } from "./TextScrambler";
+import { TextScrambler } from "../components/TextScrambler";
 import { useRef } from "react";
-import TypewriterEffect from "./TypewriterEffect";
+import TypewriterEffect from "../components/TypewriterEffect";
 import { Link } from "react-router-dom";
 
 const phrases = [

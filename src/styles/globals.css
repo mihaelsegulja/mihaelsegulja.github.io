@@ -229,6 +229,7 @@ span[class*="blinkingCursor"] {
   box-shadow: 8px 8px var(--accent-dark);
   transform: translateY(-2px);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .project-title {

@@ -1,4 +1,4 @@
-import type { TechStackProps } from "../types";
+import type { TechStackProps } from "../types/types";
 
 export const techstack: TechStackProps[] = [
   {

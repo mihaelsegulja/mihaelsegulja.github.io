@@ -9,14 +9,14 @@ const getInitialCenter = () => {
   return { x, y };
 };
 
-export default function ContactPopup({ onClose }: { onClose: () => void }) {
+export default function ContactModal({ onClose }: { onClose: () => void }) {
   const windowRef = useRef<HTMLDivElement>(null);
   const [drag, setDrag] = useState<{ x: number; y: number }>(getInitialCenter());
   const [offset, setOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
 
   useEffect(() => {
-    const centerPopup = () => {
+    const centerModal = () => {
       const width = windowRef.current?.offsetWidth || defaultWidth;
       const height = windowRef.current?.offsetHeight || defaultHeight;
       const x = (window.innerWidth - width) / 2;
@@ -24,9 +24,9 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
       setDrag({ x, y });
     };
 
-    centerPopup();
-    window.addEventListener("resize", centerPopup);
-    return () => window.removeEventListener("resize", centerPopup);
+    centerModal();
+    window.addEventListener("resize", centerModal);
+    return () => window.removeEventListener("resize", centerModal);
   }, []);
 
   const startDrag = (e: React.MouseEvent) => {

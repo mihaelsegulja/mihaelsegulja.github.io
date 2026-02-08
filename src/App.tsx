@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Contact from "./components/ContactPopup";
-import Projects from "./components/Projects";
-import About from "./components/About";
-import Hero from "./components/Hero";
+import Contact from "./components/ContactModal";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Hero from "./pages/Hero";
 import { useState } from "react";
+import ProjectModal from "./components/ProjectModal";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -16,7 +17,9 @@ function App() {
       <main id="content">
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects" element={<Projects />}>
+            <Route path=":projectSlug" element={<ProjectModal />} />
+          </Route>
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
