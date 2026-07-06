@@ -2,29 +2,21 @@ import type { ProjectProps } from "../types/types";
  
 export const projects: ProjectProps[] = [
   {
-    name: "Portfolio Website",
-    description: "Personal portfolio built with React + TypeScript + Vite",
-    url: "https://github.com/mihaelsegulja/mihaelsegulja.github.io",
-    tech: ["React", "TypeScript", "Vite"],
-    type: "Showcase/Learning",
-  },
-  {
-    name: "Match 3",
-    description: "A simple 2D match-3 game written in C and raylib",
-    url: "https://github.com/mihaelsegulja/match3",
-    tech: ["C", "raylib"],
-    type: "Learning",
+    name: "Personal Finance Tracker",
+    description: "An Android app for tracking personal expenses and incomes. Features a dashboard with summaries, searchable transaction list, exchange rate display from HNB, and notification reminders for recurring entries. All data is added and managed manually by the user.",
+    url: "https://github.com/mihaelsegulja/personal-finance-tracker",
+    tech: ["Kotlin", "Android"],
+    type: "College Project",
     media: [
-      "/media/match3/match3.mp4",
-      "/media/match3/match3.gif",
-    ],
-  },
-  {
-    name: "React Native Movie App",
-    description: "A cross-platform mobile app for discovering and ranking movies, built using React Native, Expo, TypeScript, NativeWind and Appwrite",
-    url: "https://github.com/mihaelsegulja/rn-movie-app",
-    tech: ["React Native", "Expo", "TypeScript", "NativeWind", "Appwrite"],
-    type: "Learning",
+      "media/perfintrack/img1.png",
+      "media/perfintrack/img2.png",
+      "media/perfintrack/img3.png",
+      "media/perfintrack/img4.png",
+      "media/perfintrack/img5.png",
+      "media/perfintrack/img6.png",
+      "media/perfintrack/img7.png",
+      "media/perfintrack/img8.png",
+    ]
   },
   {
     name: "macrokeeb",
@@ -37,6 +29,13 @@ export const projects: ProjectProps[] = [
       "/media/macrokeeb/macrokeeb2.jpg",
       "/media/macrokeeb/macrokeeb3.jpg",
     ],
+  },
+  {
+    name: "Portfolio Website",
+    description: "Personal portfolio built with React + TypeScript + Vite",
+    url: "https://github.com/mihaelsegulja/mihaelsegulja.github.io",
+    tech: ["React", "TypeScript", "Vite"],
+    type: "Showcase/Learning",
   },
   {
     name: "dotfiles",
@@ -103,6 +102,24 @@ export const projects: ProjectProps[] = [
       "/media/redditrss/redditrss5.png",
       "/media/redditrss/redditrss6.png",
     ],
+  },
+  {
+    name: "Match 3",
+    description: "A simple 2D match-3 game written in C and raylib",
+    url: "https://github.com/mihaelsegulja/match3",
+    tech: ["C", "raylib"],
+    type: "Learning",
+    media: [
+      "/media/match3/match3.mp4",
+      "/media/match3/match3.gif",
+    ],
+  },
+  {
+    name: "React Native Movie App",
+    description: "A cross-platform mobile app for discovering and ranking movies, built using React Native, Expo, TypeScript, NativeWind and Appwrite",
+    url: "https://github.com/mihaelsegulja/rn-movie-app",
+    tech: ["React Native", "Expo", "TypeScript", "NativeWind", "Appwrite"],
+    type: "Learning",
   },
   {
     name: "Football World Cup Viewer",
