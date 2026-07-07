@@ -22,7 +22,7 @@ export default function ProjectModal() {
         <h2>{project.name}</h2>
         <p><strong>Type:</strong> {project.type}</p>
         <p className="modal-desc">{project.description}</p>
-        <div className="modal-tech">{project.tech.join(" • ")}</div>
+        <div className="modal-tech">{project.tech.join(" * ")}</div>
 
         <div className="modal-links" style={{ display: 'flex', gap: '1rem', margin: '1rem 0' }}>
           <a

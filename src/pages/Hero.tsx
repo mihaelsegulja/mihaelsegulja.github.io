@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <>
       <TypewriterEffect uniqueKey="home" words={["./welcome.sh"]}/>
-      <div className="hero-container">
+      <div className="content-container">
         <pre className="ascii-art">{asciiArt}</pre>
         <h4>
           Read more about me, my skills and achievements{" "}

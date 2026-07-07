@@ -18,19 +18,22 @@ export default function Header({ onContactClick }: HeaderProps) {
         </button>
       <nav className={open ? "open" : ""}>
         <Link to="/" onClick={() => setOpen(false)}>
-          Home
+          home
         </Link>
         <Link to="/projects" onClick={() => setOpen(false)}>
-          Projects
+          projects
         </Link>
         <Link to="/about" onClick={() => setOpen(false)}>
-          About
+          about
+        </Link>
+        <Link to="/blog" onClick={() => setOpen(false)}>
+          blog
         </Link>
         <Link to="#" onClick={() => { onContactClick(); setOpen(false); }}>
-          Contact
+          contact
         </Link>
         <span>
-          Theme: <ThemeSwitcher/>
+          theme: <ThemeSwitcher/>
         </span>
       </nav>
     </header>

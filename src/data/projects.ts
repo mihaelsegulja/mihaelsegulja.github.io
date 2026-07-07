@@ -31,8 +31,8 @@ export const projects: ProjectProps[] = [
     ],
   },
   {
-    name: "Portfolio Website",
-    description: "Personal portfolio built with React + TypeScript + Vite",
+    name: "Personal Website",
+    description: "Personal website built with React + TypeScript + Vite",
     url: "https://github.com/mihaelsegulja/mihaelsegulja.github.io",
     tech: ["React", "TypeScript", "Vite"],
     type: "Showcase/Learning",
@@ -163,12 +163,5 @@ export const projects: ProjectProps[] = [
     media: [
       "/media/gameoflife/gol-cli.gif",
     ],
-  },
-  {
-    name: "Webshop",
-    description: "An early e-commerce site prototype built during high school, featuring product listings, a shopping cart, and basic backend integration with PHP and XAMPP",
-    url: "https://github.com/mihaelsegulja/webshop-project",
-    tech: ["PHP", "MySQL", "XAMPP", "HTML", "CSS", "JavaScript"],
-    type: "High School Project",
   },
 ];

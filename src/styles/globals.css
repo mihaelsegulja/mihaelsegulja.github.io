@@ -237,9 +237,7 @@ a:hover {
 }
 
 .project-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
 }
 
 .project-title a {
@@ -284,11 +282,12 @@ a:hover {
   padding: 1.5rem;
   width: 90%;
   max-width: 600px;
-  max-height: 90%;
+  max-height: 90vh;
+  min-height: 200px;
   color: var(--text);
   position: relative;
   box-shadow: 8px 8px var(--accent-dark);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .modal-close {
@@ -353,32 +352,29 @@ a:hover {
 }
 
 .techstack-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-top: 1rem;
 }
 
 .techstack-item {
   background: var(--bg);
   border: 1px solid var(--text-dark);
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
+  gap: 0.3rem;
+  padding: 0.2rem 0.5rem;
   word-break: break-word;
 }
 
 .techstack-item:hover {
-  transform: translateY(-2px);
   border: 1px solid var(--accent);
-  box-shadow: 6px 6px var(--accent-dark);
+  box-shadow: 3px 3px var(--accent-dark);
 }
 
 .techstack-item i {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .techstack-item:hover i {
@@ -417,4 +413,8 @@ ul li {
   .ascii-art {
     transform: scale(0.75);
   }
+}
+
+.content-container {
+  margin-top: 1rem;
 }

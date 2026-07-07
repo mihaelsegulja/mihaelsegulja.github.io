@@ -5,20 +5,20 @@ export default function About() {
   return (
     <>
       <TypewriterEffect uniqueKey="about" words={["whoami"]}/>
-      <div className="about-container">
-        <h2>About Me</h2>
+      <div className="content-container">
         <div className="about-text">
-          Hi, I'm Mihael, a full-stack software developer, hobbyist tinkerer and tech enthusiast who loves learning by doing.
+          I'm Mihael, a software engineer driven by curiosity and a hands-on approach. 
+          I enjoy understanding how things work --not just making them work-- and I'm always looking for cleaner designs, deeper understanding, and opportunities to learn something new.
         </div>
         <h3>What I Do</h3>
         <div className="whatido-container">
         <ul>
           <li>Develop applications and APIs with .NET / C#</li>
-          <li>Build responsive web apps with Angular and React</li>
-          <li>Experiment with microcontrollers like Arduino and ESP32, writing low-level firmware in C and C++ and tinkering with electronics</li>
+          <li>Build responsive web applications with Angular and React</li>
+          <li>Build embedded projects with Arduino and ESP32, writing firmware in C/C++ and experimenting with electronics</li>
           <li>Tinker with Linux systems, scripting and automation</li>
-          <li>Build and troubleshoot PCs and set up small home servers</li>
-          <li>Continuously explore and learn new tools, frameworks, and technologies</li>
+          <li>Build PCs, troubleshoot hardware and software, set up and run small home servers</li>
+          <li>Explore game development with Godot and Raylib</li>
         </ul>
         </div>
         <div className="techstack-container">
@@ -28,7 +28,7 @@ export default function About() {
           </p>
           <div className="techstack-grid">
             {techstack.map((t) => (
-              <div className="techstack-item">
+              <div key={t.name} className="techstack-item">
                 <i className={t.icon}></i>
                 <span>{t.name}</span>
               </div>

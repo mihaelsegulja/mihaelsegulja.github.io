@@ -7,7 +7,7 @@ export default function Projects() {
   return (
     <>
       <TypewriterEffect uniqueKey="projects" words={["ls projects"]}/>
-      <div className="projects-container">
+      <div className="content-container">
         <div className="projects-grid">
           {projects.map((p) => (
             <Link 
@@ -18,7 +18,7 @@ export default function Projects() {
               <h3 className="project-title">{p.name}</h3>
               <div className="project-type">{p.type}</div>
               <p className="project-description">{p.description}</p>
-              <div className="project-tech">{p.tech.join(" • ")}</div>
+              <div className="project-tech">{p.tech.join(" * ")}</div>
             </Link>
           ))}
         </div>

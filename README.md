@@ -2,9 +2,10 @@
 
 [![Deploy to GitHub Pages](https://github.com/mihaelsegulja/mihaelsegulja.github.io/actions/workflows/gh-pages-deploy.yml/badge.svg)](https://github.com/mihaelsegulja/mihaelsegulja.github.io/actions/workflows/gh-pages-deploy.yml)
 
-Personal portfolio website showcasing my projects, skills, and background as a software developer.
+Personal website showcasing my projects, skills, and background as a software engineer.
 
-Built with React, TypeScript, and Vite.  
+Built with React, TypeScript, and Vite.
+
 Deployed automatically to GitHub Pages using GitHub Actions.
 
 ## Live site

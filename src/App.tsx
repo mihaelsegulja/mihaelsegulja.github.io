@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Hero from "./pages/Hero";
 import { useState } from "react";
 import ProjectModal from "./components/ProjectModal";
+import Blog from "./pages/Blog";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -21,6 +22,7 @@ function App() {
             <Route path=":projectSlug" element={<ProjectModal />} />
           </Route>
           <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </main>
       <Footer />
