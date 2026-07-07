@@ -8,7 +8,8 @@ export default function About() {
       <div className="content-container">
         <div className="about-text">
           I'm Mihael, a software engineer driven by curiosity and a hands-on approach. 
-          I enjoy understanding how things work --not just making them work-- and I'm always looking for cleaner designs, deeper understanding, and opportunities to learn something new.
+          I enjoy understanding how things work, not just making them work. 
+          I'm always looking for ways to design cleaner systems, gain a deeper understanding, and improve along the way.
         </div>
         <h3>What I Do</h3>
         <div className="whatido-container">
