@@ -1,12 +1,46 @@
 import type { ProjectProps } from "../types/types";
- 
+
 export const projects: ProjectProps[] = [
+  {
+    name: "macrokeeb",
+    description: "Simple 10-key Arduino-based macropad with OLED screen and rotary encoder",
+    tech: ["C++", "Arduino Pro Micro", "Arduino framework"],
+    type: "High School Final Project",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/macrokeeb" },
+    ],
+    media: [
+      "/media/macrokeeb/macrokeeb1.jpg",
+      "/media/macrokeeb/macrokeeb2.jpg",
+      "/media/macrokeeb/macrokeeb3.jpg",
+    ],
+  },
+  {
+    name: "Malwave",
+    description: "A 2D fast-paced wave-based arcade arena shooter where you fight off computer malware inside a neon cyberspace grid",
+    tech: ["Godot", "C#"],
+    type: "Game",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/malwave" },
+      { label: "itch.io", url: "https://mikinator04.itch.io/malwave" },
+    ],
+    media: [
+      "/media/malwave/malwave2.gif",
+      "/media/malwave/malwave0.png",
+      "https://youtu.be/qQyvwB0_DuI",
+      "/media/malwave/malwave1.mp4",
+      "/media/malwave/malwave3.png",
+      "/media/malwave/malwave4.png",
+    ]
+  },
   {
     name: "Personal Finance Tracker",
     description: "An Android app for tracking personal expenses and incomes. Features a dashboard with summaries, searchable transaction list, exchange rate display from HNB, and notification reminders for recurring entries. All data is added and managed manually by the user.",
-    url: "https://github.com/mihaelsegulja/personal-finance-tracker",
     tech: ["Kotlin", "Android"],
     type: "College Project",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/personal-finance-tracker" },
+    ],
     media: [
       "/media/perfintrack/img1.png",
       "/media/perfintrack/img2.png",
@@ -19,44 +53,40 @@ export const projects: ProjectProps[] = [
     ]
   },
   {
-    name: "macrokeeb",
-    description: "Simple 10-key Arduino-based macropad with OLED screen and rotary encoder",
-    url: "https://github.com/mihaelsegulja/macrokeeb",
-    tech: ["C++", "Arduino Pro Micro", "Arduino framework"],
-    type: "High School Final Project",
-    media: [
-      "/media/macrokeeb/macrokeeb1.jpg",
-      "/media/macrokeeb/macrokeeb2.jpg",
-      "/media/macrokeeb/macrokeeb3.jpg",
-    ],
-  },
-  {
     name: "Personal Website",
     description: "Personal website built with React + TypeScript + Vite",
-    url: "https://github.com/mihaelsegulja/mihaelsegulja.github.io",
     tech: ["React", "TypeScript", "Vite"],
     type: "Showcase/Learning",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/mihaelsegulja.github.io" },
+    ],
   },
   {
     name: "dotfiles",
     description: "My personal Linux configuration files and scripts",
-    url: "https://github.com/mihaelsegulja/dotfiles",
     tech: ["Linux", "Bash", "Zsh", "Neovim"],
     type: "Workflow/Setup",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/dotfiles" },
+    ],
   },
   {
     name: "OAuth Demo",
     description: "A demo project for Google OAuth login using an ASP.NET 8 backend and an Expo React Native frontend",
-    url: "https://github.com/mihaelsegulja/oauth-demo",
     tech: ["C#", "ASP.NET", "React Native", "Expo", "TypeScript"],
     type: "Learning",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/oauth-demo" },
+    ],
   },
   {
     name: "Marx Weather Station",
     description: "An IoT project for monitoring air quality, temperature and more using an ESP32 and BME680 sensor. It collects sensor data, sends it via MQTT to a backend service, stores it in a SQL Server database, and visualizes data for a given time period.",
-    url: "https://github.com/mihaelsegulja/marx-weather-station",
     tech: ["C#", "ASP.NET", "SQL Server", "ESP32", "MQTT", "RabbitMQ", "HTML", "CSS", "JavaScript"],
     type: "College Project",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/marx-weather-station" },
+    ],
     media: [
       "/media/marx/marx3.mp4",
       "/media/marx/marx0.png",
@@ -67,12 +97,14 @@ export const projects: ProjectProps[] = [
   {
     name: "DIY Project Platform",
     description: "A web platform for sharing and discovering DIY tips and tricks. Admins can create categorized entries by topic and materials, approve user submissions, and manage content. Users can browse categories, leave comments, and submit their own tips for approval.",
-    url: "https://github.com/mihaelsegulja/rwa-projekt",
     tech: ["C#", "ASP.NET", "SQL Server", "Razor", "CSS", "JavaScript", "Bootstrap", "jQuery"],
     type: "College Project",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/rwa-projekt" },
+    ],
     media: [
-      "/media/diypp/diypp0.png",
       "/media/diypp/diypp1.png",
+      "/media/diypp/diypp0.png",
       "/media/diypp/diypp2.png",
       "/media/diypp/diypp3.png",
       "/media/diypp/diypp4.png",
@@ -90,9 +122,11 @@ export const projects: ProjectProps[] = [
   {
     name: "Reddit RSS Reader",
     description: "A Java desktop application for authenticated admin users to fetch and store Reddit RSS feed data (subreddits, comment threads, etc.) into a SQL Server database. Includes functionality to view, update, and delete entries through a Swing-based GUI.",
-    url: "https://github.com/mihaelsegulja/java1-projekt",
     tech: ["Java", "SQL Server", "Java Swing GUI"],
     type: "College Project",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/java1-projekt" },
+    ],
     media: [
       "/media/redditrss/redditrss0.png",
       "/media/redditrss/redditrss1.png",
@@ -106,9 +140,11 @@ export const projects: ProjectProps[] = [
   {
     name: "Match 3",
     description: "A simple 2D match-3 game written in C and raylib",
-    url: "https://github.com/mihaelsegulja/match3",
     tech: ["C", "raylib"],
     type: "Learning",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/match3" },
+    ],
     media: [
       "/media/match3/match3.mp4",
       "/media/match3/match3.gif",
@@ -117,16 +153,20 @@ export const projects: ProjectProps[] = [
   {
     name: "React Native Movie App",
     description: "A cross-platform mobile app for discovering and ranking movies, built using React Native, Expo, TypeScript, NativeWind and Appwrite",
-    url: "https://github.com/mihaelsegulja/rn-movie-app",
     tech: ["React Native", "Expo", "TypeScript", "NativeWind", "Appwrite"],
     type: "Learning",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/rn-movie-app" },
+    ],
   },
   {
     name: "Football World Cup Viewer",
     description: "Windows desktop applications for displaying and visualizing data from the 2018 Men's and 2019 Women's Football World Cups. Built with both Windows Forms and WPF to demonstrate data fetching, presentation, and UI design techniques.",
-    url: "https://github.com/mihaelsegulja/oop-dotnet-projekt",
     tech: ["C#", ".NET", "Windows Forms", "WPF"],
     type: "College Project",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/oop-dotnet-projekt" },
+    ],
     media: [
       "/media/worldcup/worldcup0.png",
       "/media/worldcup/worldcup1.png",
@@ -139,17 +179,21 @@ export const projects: ProjectProps[] = [
   {
     name: "College Website",
     description: "A responsive static site built to demonstrate advanced frontend skills, including custom layouts, interactive elements, and clean design",
-    url: "https://github.com/mihaelsegulja/supit-projekt",
     tech: ["HTML", "CSS", "JavaScript", "jQuery"],
     type: "College Project",
-    demo: "https://mihaelsegulja.github.io/supit-projekt",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/supit-projekt" },
+      { label: "live demo", url: "https://mihaelsegulja.github.io/supit-projekt" },
+    ],
   },
   {
     name: "Dijkstra Pathfinding",
     description: "An interactive visualization of Dijkstra's algorithm using C++ and SFML",
-    url: "https://github.com/mihaelsegulja/spa-dz-03",
     tech: ["C++", "SFML"],
     type: "College Project",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/spa-dz-03" },
+    ],
     media: [
       "/media/dijkstra/dijkstra.gif",
     ],
@@ -157,9 +201,11 @@ export const projects: ProjectProps[] = [
   {
     name: "Game of Life",
     description: "CLI representation of Conway's Game of Life implemented in C++",
-    url: "https://github.com/mihaelsegulja/spa-dz-02",
     tech: ["C++"],
     type: "College Project",
+    links: [
+      { label: "source code", url: "https://github.com/mihaelsegulja/spa-dz-02" },
+    ],
     media: [
       "/media/gameoflife/gol-cli.gif",
     ],

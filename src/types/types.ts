@@ -1,13 +1,15 @@
-export type Tab = "projects" | "about" | "home";
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
 
 export interface ProjectProps {
   name: string;
   description: string;
-  url: string;
   tech: string[];
   type: string;
   media?: string[];
-  demo?: string;
+  links: ProjectLink[];
 }
 
 export interface TechStackProps {
