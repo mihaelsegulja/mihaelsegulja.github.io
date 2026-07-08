@@ -4,8 +4,6 @@
 
 Personal website showcasing my projects, skills, and background as a software engineer.
 
-Built with React, TypeScript, and Vite.
-
 Deployed automatically to GitHub Pages using GitHub Actions.
 
 ## Live site
