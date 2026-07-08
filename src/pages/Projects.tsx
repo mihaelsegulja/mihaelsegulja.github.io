@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
 import TypewriterEffect from "../components/TypewriterEffect";
 import { slugify } from "../utils/slugify";
@@ -6,6 +7,10 @@ import { Link, Outlet } from "react-router-dom";
 export default function Projects() {
   return (
     <>
+      <Helmet>
+        <title>Projects | Mihael Šegulja</title>
+        <meta name="description" content="A collection of projects by Mihael Šegulja — web apps, mobile apps, IoT, desktop applications, and more." />
+      </Helmet>
       <TypewriterEffect uniqueKey="projects" words={["ls projects"]}/>
       <div className="content-container">
         <div className="projects-grid">

@@ -1,9 +1,14 @@
+import { Helmet } from 'react-helmet-async'
 import { techstack } from '../data/techstack'
 import TypewriterEffect from '../components/TypewriterEffect'
 
 export default function About() {
   return (
     <>
+      <Helmet>
+        <title>About | Mihael Šegulja</title>
+        <meta name="description" content="About Mihael Šegulja — a full-stack software engineer. Tech stack, certifications, and achievements." />
+      </Helmet>
       <TypewriterEffect uniqueKey="about" words={["whoami"]}/>
       <div className="content-container">
         <div className="about-text">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import TypewriterEffect from "../components/TypewriterEffect";
 import { Link } from "react-router-dom";
 
@@ -10,6 +11,10 @@ const asciiArt = `\
 export default function Hero() {
   return (
     <>
+      <Helmet>
+        <title>Mihael Šegulja | Software Engineer</title>
+        <meta name="description" content="Personal website of Mihael Šegulja, a full-stack software engineer and tech enthusiast. Explore projects, skills, and achievements." />
+      </Helmet>
       <TypewriterEffect uniqueKey="home" words={["./welcome.sh"]}/>
       <div className="content-container">
         <pre className="ascii-art">{asciiArt}</pre>
