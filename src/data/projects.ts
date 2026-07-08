@@ -8,14 +8,14 @@ export const projects: ProjectProps[] = [
     tech: ["Kotlin", "Android"],
     type: "College Project",
     media: [
-      "media/perfintrack/img1.png",
-      "media/perfintrack/img2.png",
-      "media/perfintrack/img3.png",
-      "media/perfintrack/img4.png",
-      "media/perfintrack/img5.png",
-      "media/perfintrack/img6.png",
-      "media/perfintrack/img7.png",
-      "media/perfintrack/img8.png",
+      "/media/perfintrack/img1.png",
+      "/media/perfintrack/img2.png",
+      "/media/perfintrack/img3.png",
+      "/media/perfintrack/img4.png",
+      "/media/perfintrack/img5.png",
+      "/media/perfintrack/img6.png",
+      "/media/perfintrack/img7.png",
+      "/media/perfintrack/img8.png",
     ]
   },
   {

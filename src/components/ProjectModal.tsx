@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "../data/projects";
 import useFancybox from "../hooks/useFancybox";
@@ -16,12 +15,7 @@ export default function ProjectModal() {
   if (!project) return null;
 
   return (
-    <>
-      <Helmet>
-        <title>{project.name} | Mihael Šegulja</title>
-        <meta name="description" content={project.description} />
-      </Helmet>
-      <div className="modal-overlay" onClick={close}>
+    <div className="modal-overlay" onClick={close}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={close}>X</button>
         
@@ -72,7 +66,6 @@ export default function ProjectModal() {
           })}
         </div>
       </div>
-      </div>
-    </>
+    </div>
   );
 }
