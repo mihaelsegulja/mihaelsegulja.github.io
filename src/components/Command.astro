@@ -1,0 +1,35 @@
+---
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<div class="command">
+  <b class="command-prefix">&gt; </b><span class="sr-only">{text}</span><span data-command-text aria-hidden="true">{text}</span><span
+    class="cli-cursor"
+    aria-hidden="true">█</span>
+</div>
+
+<script>
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll<HTMLElement>('[data-command-text]').forEach((element) => {
+      if (reducedMotion.matches || element.closest('[inert]')) {
+        element.dataset.typingReady = '';
+        return;
+      }
+      const text = element.textContent || '';
+      let length = 0;
+      element.textContent = '';
+      element.dataset.typingReady = '';
+      const typeNext = () => {
+        if (reducedMotion.matches) {
+          element.textContent = text;
+          return;
+        }
+        element.textContent = text.slice(0, ++length);
+        if (length < text.length) window.setTimeout(typeNext, 28 + Math.random() * 32);
+      };
+      window.setTimeout(typeNext, 200);
+  });
+</script>

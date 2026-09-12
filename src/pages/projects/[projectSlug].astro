@@ -1,0 +1,38 @@
+---
+import { render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Command from "../../components/Command.astro";
+import ProjectMedia from "../../components/ProjectMedia.astro";
+import { getProjects } from "../../utils/projects";
+export async function getStaticPaths() {
+  return (await getProjects()).map((project) => ({
+    params: { projectSlug: project.slug },
+    props: { project },
+  }));
+}
+const { project } = Astro.props;
+const { Content } = await render(project.entry);
+---
+
+<Layout title={project.name} description={project.description}>
+  <Command text={`cat projects/${project.slug}`} />
+  <article class="content-container project-page">
+    <a href="/projects">[{'<-'} all projects]</a>
+    <header>
+      <h1>{project.name}</h1>
+      <p>{project.type}</p>
+      <div class="project-tech">{project.tech.join(" * ")}</div>
+      <div class="project-links">
+        {project.links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer">[{link.label} {'->'}]</a>)}
+      </div>
+    </header>
+    <div class="project-body"><Content /></div>
+    <ProjectMedia media={project.media} name={project.name} />
+  </article>
+</Layout>
+<style>
+  .project-page { max-width: 900px; }
+  .project-body :global(p), .project-body :global(ul), .project-body :global(ol) { margin-bottom: 1rem; }
+  .project-body :global(img) { max-width: 100%; height: auto; }
+  .project-body :global(pre) { overflow-x: auto; }
+</style>

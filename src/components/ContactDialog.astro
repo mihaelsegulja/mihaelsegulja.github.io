@@ -1,0 +1,46 @@
+---
+import ContactInfo from "./ContactInfo.astro";
+---
+
+<dialog
+  id="contact-window"
+  class="contact-window"
+  aria-labelledby="contact-title"
+>
+  <div class="contact-titlebar">
+    <h2 id="contact-title">Contact</h2><form method="dialog">
+      <button autofocus aria-label="Close contact window">X</button>
+    </form>
+  </div>
+  <ContactInfo />
+</dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>("#contact-window");
+  document
+    .querySelectorAll<HTMLAnchorElement>("[data-contact-open]")
+    .forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (
+          !dialog ||
+          event.ctrlKey ||
+          event.metaKey ||
+          event.shiftKey ||
+          event.altKey
+        )
+          return;
+        event.preventDefault();
+        dialog.showModal();
+      });
+    });
+  dialog?.addEventListener("click", (event) => {
+    const rect = dialog.getBoundingClientRect();
+    if (
+      event.target === dialog &&
+      (event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom)
+    )
+      dialog.close();
+  });
+</script>

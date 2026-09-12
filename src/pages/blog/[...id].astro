@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title} description={post.data.description}
+  ><article class="blog-article">
+    <a href="/blog">{"<-"} blog</a><h1>{post.data.title}</h1><time
+      datetime={post.data.pubDate.toISOString()}
+      >{
+        post.data.pubDate.toLocaleDateString("en-GB", { timeZone: "UTC" })
+      }</time
+    >
+    {
+      post.data.cover && (
+        <Image src={post.data.cover} alt={post.data.coverAlt || ""} />
+      )
+    }
+    <Content />
+  </article></Layout
+>

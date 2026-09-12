@@ -1,0 +1,30 @@
+---
+interface Props { media: string[]; name: string }
+const { media, name } = Astro.props;
+const items = media.map((src) => {
+  let youtube = '';
+  if (src.startsWith('https://')) {
+    const url = new URL(src);
+    const id = url.hostname === 'youtu.be' ? url.pathname.slice(1) :
+      ['youtube.com', 'www.youtube.com', 'm.youtube.com'].includes(url.hostname) ?
+      url.searchParams.get('v') || url.pathname.match(/^\/(?:embed|shorts)\/([^/]+)/)?.[1] || '' : '';
+    if (/^[\w-]{11}$/.test(id)) youtube = `https://www.youtube.com/embed/${id}`;
+  }
+  return { src, youtube, video: /\.(mp4|webm)(?:[?#]|$)/i.test(src) };
+});
+---
+{items.length > 0 && <section aria-label={`${name} media`} class="project-media">
+  <h2>Media</h2>
+  {items.map((item, index) => <figure>
+    {item.youtube ? <iframe src={item.youtube} title={`${name}: YouTube video ${index + 1}`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" /> :
+      item.video ? <video src={item.src} controls playsinline preload="metadata" aria-label={`${name}: video ${index + 1}`} /> :
+      item.src.startsWith('http') ? <a href={item.src}>[open media {'->'}]</a> :
+      <a href={item.src} target="_blank" rel="noopener noreferrer"><img src={item.src} alt={`${name}: screenshot ${index + 1}`} loading="lazy" /></a>}
+  </figure>)}
+</section>}
+<style>
+  .project-media { margin-top: 2rem; }
+  figure { margin: 1.5rem 0; }
+  img, video { display: block; width: 100%; max-height: 75vh; object-fit: contain; }
+  iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+</style>

@@ -23,4 +23,4 @@ export const techstack: TechStackProps[] = [
   { name: "Visual Studio", icon: "nf nf-dev-visualstudio" },
   { name: "Rider", icon: "nf nf-dev-rider" },
   { name: "PlatformIO", icon: "nf nf-seti-platformio" },
-]
+];
