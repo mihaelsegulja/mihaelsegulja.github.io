@@ -1,0 +1,34 @@
+---
+import { getProjects } from "../utils/projects";
+const projects = await getProjects();
+---
+
+<div class="content-container">
+  <div class="projects-grid">
+    {
+      projects.map((project) => {
+        const preview = project.media?.find(
+          (src) => !src.startsWith("http") && !/\.(mp4|webm)(?:[?#]|$)/i.test(src),
+        );
+        return (
+          <a
+            href={`/projects/${project.slug}`}
+            class="project-card"
+          >
+            <div class="card-preview">
+              {preview ? (
+                <img src={preview} alt="" loading="lazy" />
+              ) : (
+                <span class="card-placeholder">&gt;_</span>
+              )}
+            </div>
+            <h3 class="project-title">{project.name}</h3>
+            <div class="project-type">{project.type}</div>
+            <p class="project-description">{project.description}</p>
+            <div class="project-tech">{project.tech.join(" * ")}</div>
+          </a>
+        );
+      })
+    }
+  </div>
+</div>

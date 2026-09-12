@@ -1,0 +1,58 @@
+---
+import { themes } from "../data/themes";
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<header class="site-header">
+  <details class="site-navigation" open>
+    <summary class="hamburger" aria-label="Navigation">&gt;&gt;</summary>
+    <nav aria-label="Main navigation">
+      {
+        ["home", "projects", "blog"].map((name) => {
+          const href = name === "home" ? "/" : `/${name}`;
+          return (
+            <a href={href} aria-current={path === href ? "page" : undefined}>
+              {name}
+            </a>
+          );
+        })
+      }
+      <a href="/contact" data-contact-open>contact</a>
+      <label class="theme-control"
+        >theme: <select id="theme" aria-label="Color theme">
+          {
+            themes.map((theme) => (
+              <option value={theme.id}>{theme.name}</option>
+            ))
+          }
+        </select></label
+      >
+    </nav>
+  </details>
+</header>
+<script>
+  import { themes } from "../data/themes";
+  const navigation =
+    document.querySelector<HTMLDetailsElement>(".site-navigation");
+  const mobile = window.matchMedia("(max-width: 600px)");
+  if (navigation) navigation.open = !mobile.matches;
+  mobile.addEventListener("change", () => {
+    if (navigation) navigation.open = !mobile.matches;
+  });
+  const select = document.querySelector<HTMLSelectElement>("#theme");
+  if (select) {
+    select.value = document.documentElement.dataset.theme || "hacker";
+    select.addEventListener("change", () => {
+      document.documentElement.classList.remove(
+        ...themes.map((theme) => `theme-${theme.id}`),
+      );
+      document.documentElement.classList.add(`theme-${select.value}`);
+      document.documentElement.dataset.theme = select.value;
+      try {
+        localStorage.setItem("theme", select.value);
+      } catch {
+        /* Theme still works without storage. */
+      }
+    });
+  }
+</script>

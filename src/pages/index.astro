@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Command from "../components/Command.astro";
+import { techstack } from "../data/techstack";
+import { getProjects } from "../utils/projects";
+const projects = await getProjects();
+const selectedProjects = ["Marx Weather Station", "Malwave", "macrokeeb"]
+  .map((name) => projects.find((project) => project.name === name)!) ;
+const asciiArt = `\
+░▒█░░▒█░▒█▀▀▀░▒█░░░░▒█▀▀▄░▒█▀▀▀█░▒█▀▄▀█░▒█▀▀▀░░░░▒█▀▀▀█░▒█░▒█
+░▒█▒█▒█░▒█▀▀▀░▒█░░░░▒█░░░░▒█░░▒█░▒█▒█▒█░▒█▀▀▀░▄▄░░▀▀▀▄▄░▒█▀▀█
+░▒▀▄▀▄▀░▒█▄▄▄░▒█▄▄█░▒█▄▄▀░▒█▄▄▄█░▒█░░▒█░▒█▄▄▄░▀▀░▒█▄▄▄█░▒█░▒█
+`;
+---
+
+<Layout description="Mihael Šegulja — software engineer building with C#/.NET, Angular, and React, and experimenting with Linux, embedded systems, and games.">
+  <Command text="./welcome.sh" />
+  <div class="content-container homepage">
+    <pre class="ascii-art" aria-hidden="true">{asciiArt}</pre>
+    <section id="about" class="home-intro" aria-labelledby="intro-title">
+      <h1 id="intro-title">I'm Mihael Šegulja.</h1>
+      <p class="home-lead">Software engineer, Linux tinkerer, and someone who likes figuring out how things work.</p>
+      <p>I build applications and APIs with C#/.NET and web interfaces with Angular and React. 
+        Outside of that, I enjoy building PCs, troubleshooting hardware and software, and tinkering with Linux and small home servers. 
+        I also play around with microcontrollers, electronics, and game development.</p>
+      <p>This is my little corner of the internet: things I've built, things I'm learning, and room for the occasional experiment.</p>
+      <div class="home-links" aria-label="Contact and profiles">
+        <a href="mailto:mihael.segulja.dev@gmail.com">[email]</a>
+        <a href="https://linkedin.com/in/mihael-segulja" target="_blank" rel="noopener noreferrer">[linkedin]</a>
+        <a href="https://github.com/mihaelsegulja" target="_blank" rel="noopener noreferrer">[github]</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="work-title">
+      <h2 id="work-title">A few things I've built</h2>
+      <div class="selected-projects">
+        {selectedProjects.map((project) => <article class="selected-project">
+          <h3><a href={`/projects/${project.slug}`}>{project.name} {'->'}</a></h3>
+          <p>{project.description}</p>
+          <div class="project-tech">{project.tech.join(" * ")}</div>
+        </article>)}
+      </div>
+      <a href="/projects">[all projects {'->'}]</a>
+    </section>
+
+    <section aria-labelledby="tools-title">
+      <h2 id="tools-title">What I work with</h2>
+      <p>Mostly <strong>C#/.NET, SQL Server, Angular, and React</strong> for applications and web development.</p>
+      <p>For other projects: C/C++, Arduino and ESP32, Godot and raylib. I also tinker with Linux, scripting, PC hardware, and small home servers.</p>
+      <p>These are my usual tools, but I enjoy trying something new from time to time.</p>
+      <details class="home-details"><summary>[more tools & technologies]</summary>
+        <div class="techstack-grid">
+        {
+          techstack.map((t) => (
+            <div class="techstack-item">
+              <i class={t.icon} />
+              <span>{t.name}</span>
+            </div>
+          ))
+        }
+      </div>
+      </details>
+    </section>
+
+    <section aria-labelledby="achievements-title">
+      <h2 id="achievements-title">A few things I'm proud of</h2>
+      
+      <ul>
+        <li>
+          WorldSkills Croatia 2023: 2nd place (silver) in IT System
+          Administration discipline
+        </li>
+        <li>Inova Mladi 2023: Bronze medal for macro keyboard</li>
+        <li>
+          Innovation Fair Ivanić-Grad 2023: Silver medal for macro keyboard
+        </li>
+        <li>Participated in Algebra Security Day Contest 2022</li>
+        <li>Participated in Hacknite 2.0 2021</li>
+      </ul>
+      <details class="home-details" id="certificates"><summary>[certificates & courses]</summary>
+        <ul>
+        <li>
+          Oracle Cloud Infrastructure Certified AI Foundations Associate (2025)
+        </li>
+        <li>
+          Microsoft Applied Skills: Administer Active Directory Domain Services
+          (2024)
+        </li>
+        <li>Fortinet Certified Fundamentals Cybersecurity (2024)</li>
+        <li>
+          Oracle Academy (2023)
+          <ul>
+            <li>Java Foundations</li>
+            <li>Java Programming</li>
+            <li>AiML Artificial Intelligence with Machine Learning in Java</li>
+          </ul>
+        </li>
+        <li>
+          Cisco Networking Academy (2023)
+          <ul>
+            <li>CCNA: Introduction to Networks</li>
+            <li>CCNA: Switching, Routing, and Wireless Essentials</li>
+            <li>CCNA: Enterprise Networking, Security, and Automation</li>
+          </ul>
+        </li>
+        <li>IQRF Basics (2022)</li>
+      </ul>
+      </details>
+      <p class="home-links certification-links">
+        <a href="https://www.credly.com/users/mihael-segulja" target="_blank" rel="noopener noreferrer">[credly]</a>
+        <a href="https://learn.microsoft.com/en-us/users/mihaelsegulja0000/" target="_blank" rel="noopener noreferrer">[microsoft learn]</a>
+      </p>
+    </section>
+
+    <section class="home-elsewhere" aria-labelledby="elsewhere-title">
+      <h2 id="elsewhere-title">Elsewhere</h2>
+      <a href="https://leetcode.com/u/mihaelsegulja/" target="_blank" rel="noopener noreferrer">[leetcode]</a>
+    </section>
+  </div>
+</Layout>
