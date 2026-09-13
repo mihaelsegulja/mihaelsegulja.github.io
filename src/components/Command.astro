@@ -6,14 +6,22 @@ const { text } = Astro.props;
 ---
 
 <div class="command">
-  <b class="command-prefix">&gt; </b><span class="sr-only">{text}</span><span data-command-text aria-hidden="true">{text}</span><span
+  <button class="command-prefix" type="button" aria-label="Change command prefix">&gt;</button>{' '}<span class="sr-only">{text}</span><span data-command-text aria-hidden="true">{text}</span><span
     class="cli-cursor"
     aria-hidden="true">█</span>
 </div>
 
 <script>
+  const prefixes = ['>', '$', 'λ', '~', '#', '@', '%'];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll<HTMLElement>('[data-command-text]').forEach((element) => {
+      const prefix = element.closest('.command')?.querySelector<HTMLButtonElement>('.command-prefix');
+      let prefixIndex = 0;
+      prefix?.addEventListener('click', () => {
+        prefixIndex = (prefixIndex + 1) % prefixes.length;
+        prefix.textContent = prefixes[prefixIndex];
+      });
+
       if (reducedMotion.matches || element.closest('[inert]')) {
         element.dataset.typingReady = '';
         return;

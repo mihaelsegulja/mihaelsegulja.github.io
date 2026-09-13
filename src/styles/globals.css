@@ -326,6 +326,13 @@ select {
   padding: 0.3rem;
   cursor: pointer;
 }
+.command-prefix {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: inherit;
+  font-weight: bold;
+}
 .command-prefix,
 .contact-entry span {
   color: var(--accent);
@@ -503,7 +510,4 @@ body:has(dialog[open]) {
 }
 .home-details[open] summary {
   margin-bottom: 1rem;
-}
-.home-elsewhere h2 {
-  font-size: 1rem;
 }
