@@ -1,5 +1,5 @@
 ---
-order: 12
+order: 11
 name: "College Website"
 description: "A responsive static site built to demonstrate advanced frontend skills, including custom layouts, interactive elements, and clean design"
 tech: ["HTML","CSS","JavaScript","jQuery"]

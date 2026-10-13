@@ -40,20 +40,12 @@
   --text-dark: #a89984;
 }
 
-.theme-dracula {
-  --bg: #282a36;
-  --text: #f8f8f2;
-  --accent: #bd93f9;
-  --accent-dark: #6272a4;
-  --text-dark: #44475a;
-}
-
-.theme-tokyo-night {
-  --bg: #1a1b26;
-  --text: #c0caf5;
-  --accent: #7aa2f7;
-  --accent-dark: #3d59a1;
-  --text-dark: #414868;
+.theme-kanagawa-wave {
+  --bg: #1f1f28;
+  --text: #dcd7ba;
+  --accent: #7e9cd8;
+  --accent-dark: #2d4f67;
+  --text-dark: #727169;
 }
 
 .theme-one-dark {

@@ -4,8 +4,7 @@ export const themes = [
   { id: "solarized-light", name: "Solarized Light" },
   { id: "gruvbox-dark", name: "Gruvbox Dark" },
   { id: "gruvbox-light", name: "Gruvbox Light" },
-  { id: "tokyo-night", name: "Tokyo Night" },
-  { id: "dracula", name: "Dracula" },
+  { id: "kanagawa-wave", name: "Kanagawa Wave" },
   { id: "one-dark", name: "One Dark" },
   { id: "monokai", name: "Monokai" },
 ];

@@ -1,5 +1,5 @@
 ---
-order: 0
+order: 1
 name: "macrokeeb"
 description: "Simple 10-key Arduino-based macropad with OLED screen and rotary encoder"
 tech: ["C++","Arduino Pro Micro","Arduino framework"]

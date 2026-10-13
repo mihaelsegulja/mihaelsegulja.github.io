@@ -14,7 +14,6 @@ const items = media.map((src) => {
 });
 ---
 {items.length > 0 && <section aria-label={`${name} media`} class="project-media">
-  <h2>Media</h2>
   {items.map((item, index) => <figure>
     {item.youtube ? <iframe src={item.youtube} title={`${name}: YouTube video ${index + 1}`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" /> :
       item.video ? <video src={item.src} controls playsinline preload="metadata" aria-label={`${name}: video ${index + 1}`} /> :

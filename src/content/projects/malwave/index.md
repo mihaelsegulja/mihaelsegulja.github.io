@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 name: "Malwave"
 description: "A 2D fast-paced wave-based arcade arena shooter where you fight off computer malware inside a neon cyberspace grid"
 tech: ["Godot","C#"]

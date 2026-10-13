@@ -3,9 +3,12 @@ import assert from "node:assert/strict";
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
-const projectFiles = readdirSync("src/content/projects").map((slug) => ({
-  slug, source: readFileSync(`src/content/projects/${slug}/index.md`, "utf8"),
-}));
+const projectFiles = readdirSync("src/content/projects")
+  .filter((slug) => existsSync(`src/content/projects/${slug}/index.md`))
+  .map((slug) => ({
+    slug,
+    source: readFileSync(`src/content/projects/${slug}/index.md`, "utf8"),
+  }));
 const projectSource = projectFiles.map((project) => project.source).join("\n");
 
 const html = (route) => readFileSync(join("dist", route, "index.html"), "utf8");
@@ -100,7 +103,7 @@ test("project links navigate directly to pages without project dialogs", () => {
 });
 
 test("project pages render Markdown and playable media inline", () => {
-  assert.equal(projectFiles.length, 15);
+  assert.equal(projectFiles.length, 16);
   assert.ok(!existsSync("src/data/projects.ts"));
   const page = html("projects/malwave");
   assert.match(page, /<video[^>]*controls/);
