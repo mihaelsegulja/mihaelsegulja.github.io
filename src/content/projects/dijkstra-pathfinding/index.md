@@ -5,7 +5,7 @@ description: "An interactive visualization of Dijkstra's algorithm using C++ and
 tech: ["C++","SFML"]
 type: "College Project"
 links: [{"label":"source code","url":"https://github.com/mihaelsegulja/spa-dz-03"}]
-media: ["/src/media/dijkstra/dijkstra.gif"]
+media: ["/src/content/projects/dijkstra-pathfinding/media/dijkstra.gif"]
 ---
 
 An interactive visualization of Dijkstra's algorithm using C++ and SFML

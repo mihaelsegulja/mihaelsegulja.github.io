@@ -42,7 +42,7 @@ test("all existing routes and project detail pages contain static content", () =
 test("all local project media exist in the static output", () => {
   const source = projectSource;
   const imports = Array.from(new Set(Array.from(
-    source.matchAll(/"(\/src\/media\/[^"]+)"/g),
+    source.matchAll(/"(\/src\/content\/projects\/[^"]+)"/g),
     ([, path]) => path,
   )));
   assert.ok(imports.length > 0);

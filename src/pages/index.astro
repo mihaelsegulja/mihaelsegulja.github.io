@@ -4,7 +4,7 @@ import Command from "../components/Command.astro";
 import { techstack } from "../data/techstack";
 import { getProjects } from "../utils/projects";
 const projects = await getProjects();
-const selectedProjects = ["Marx Weather Station", "Malwave", "macrokeeb"]
+const selectedProjects = ["Microclimate IoT System", "Malwave", "macrokeeb"]
   .map((name) => projects.find((project) => project.name === name)!) ;
 const asciiArt = `\
 ░▒█░░▒█░▒█▀▀▀░▒█░░░░▒█▀▀▄░▒█▀▀▀█░▒█▀▄▀█░▒█▀▀▀░░░░▒█▀▀▀█░▒█░▒█

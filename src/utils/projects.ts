@@ -1,6 +1,6 @@
 import { getCollection } from "astro:content";
 
-const assets = import.meta.glob<string>("/src/media/**/*.{jpg,jpeg,png,gif,webp,mp4,webm}", {
+const assets = import.meta.glob<string>("/src/content/projects/**/*.{jpg,jpeg,png,gif,webp,mp4,webm}", {
   eager: true,
   import: "default",
   query: "?url&no-inline",
